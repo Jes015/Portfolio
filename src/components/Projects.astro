@@ -1,0 +1,72 @@
+---
+import { CRoutes, IProject } from "@src/models";
+import Project from "./Project.astro";
+
+const projects: IProject[] = [
+    {
+        title: "Example1",
+        imageUrl: "",
+        techs: ["React", "Typescript"],
+        githubURL: "https://example.com",
+        demoURL: "https://example.com",
+    },
+    {
+        title: "Example1",
+        imageUrl: "",
+        techs: ["React", "Typescript"],
+        githubURL: "https://example.com",
+        demoURL: "https://example.com",
+    },
+    {
+        title: "Example1",
+        imageUrl: "",
+        techs: ["React", "Typescript"],
+        githubURL: "https://example.com",
+        demoURL: "https://example.com",
+    },
+    {
+        title: "Example1",
+        imageUrl: "",
+        techs: ["React", "Typescript"],
+        githubURL: "https://example.com",
+        demoURL: "https://example.com",
+    },
+    {
+        title: "Example1",
+        imageUrl: "",
+        techs: ["React", "Typescript"],
+        githubURL: "https://example.com",
+        demoURL: "https://example.com",
+    },
+];
+---
+
+<section class="projectsSection" id={CRoutes.Projects}>
+    <header>
+        <h4 class="projectsSection__title">{CRoutes.Projects}</h4>
+    </header>
+    <main>
+        <div class="projectsSection__project-container">
+            {projects.map((projectData) => <Project data={projectData} />)}
+        </div>
+    </main>
+</section>
+
+<style>
+    .projectsSection {
+        overflow: hidden;
+    }
+
+    .projectsSection__title {
+        color: var(--primary-text-color);
+        margin-top: 0.3em;
+    }
+
+    .projectsSection__project-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(10em, 1fr));
+        gap: 0.4em;
+        overflow: hidden;
+        background-color: red;
+    }
+</style>

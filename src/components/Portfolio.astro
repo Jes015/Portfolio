@@ -7,11 +7,16 @@ import CarrouselOfSections from "@components/CarrouselOfSections.astro";
     <About />
     <CarrouselOfSections />
 </div>
-<style>
+<style is:global>
     .portfolio-container {
         display: flex;
+        justify-content: center;
 
-        border: 0.1em solid var(--primary-border-color);
         border-radius: 0.2em;
+    }
+
+    .portfolio-container > * {
+        padding: 1em;
+        border: 0.1em solid var(--primary-border-color);
     }
 </style>

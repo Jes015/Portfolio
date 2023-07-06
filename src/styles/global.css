@@ -1,6 +1,6 @@
 :root {
     --primary-background-color: #0f172a;
-    --secondary-background-color: #14243f;
+    --secondary-background-color: #111a30;
 
 
     --primary-text-color: #e2e8f0;
@@ -22,8 +22,26 @@ a {
     font-size: 0.84em;
 }
 
-@media (width < 1236px) {
+@media (width <=2560px) {
     body {
-        background-size: auto 100vh;
+        font-size: 30px;
+    }
+}
+
+@media (width <=1440px) {
+    body {
+        font-size: 16px;
+    }
+}
+
+@media (width <=1024px) {
+    body {
+        font-size: 12px;
+    }
+}
+
+@media (width <=768px) {
+    body {
+        font-size: 9px;
     }
 }
