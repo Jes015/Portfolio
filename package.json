@@ -11,10 +11,11 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@astrojs/image": "^0.17.2",
     "astro": "^2.7.4"
   },
   "devDependencies": {
-    "eslint-config-standard-with-typescript": "^36.0.0",
-    "husky": "^8.0.3"
+    "husky": "^8.0.3",
+    "rome": "12.1.3"
   }
 }
