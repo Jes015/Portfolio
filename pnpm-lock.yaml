@@ -4,6 +4,9 @@ dependencies:
   '@astrojs/image':
     specifier: ^0.17.2
     version: 0.17.2(astro@2.7.4)
+  '@fontsource/roboto':
+    specifier: ^5.0.4
+    version: 5.0.4
   astro:
     specifier: ^2.7.4
     version: 2.7.4
@@ -571,6 +574,10 @@ packages:
     requiresBuild: true
     dev: false
     optional: true
+
+  /@fontsource/roboto@5.0.4:
+    resolution: {integrity: sha512-4aVlY+8u/8V15zP8Z4tscGebdD62trVo1CVNW8OsvLWYduebFxxETj7yzfkR/131fVGy/lO1RTeLf6CT7eD8CQ==}
+    dev: false
 
   /@jridgewell/gen-mapping@0.3.3:
     resolution: {integrity: sha512-HLhSWOLRi875zjjMG/r+Nv0oCW8umGb0BgEhyX3dDX3egwZtB8PqLnjz3yedt8R5StBrzcg4aBpnh8UA9D1BoQ==}

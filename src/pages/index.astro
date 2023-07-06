@@ -1,8 +1,20 @@
 ---
+import Portfolio from "@src/components/Portfolio.astro";
 import Layout from "@src/layouts/Layout.astro";
 ---
 
 <Layout>
-	<section>about me</section>
-	<section>desc and all</section>
+	<div class="global-container">
+		<Portfolio />
+	</div>
 </Layout>
+
+<style>
+	.global-container {
+		width: 100vw;
+		height: 100vh;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+</style>

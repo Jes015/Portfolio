@@ -1,0 +1,29 @@
+:root {
+    --primary-background-color: #0f172a;
+    --secondary-background-color: #14243f;
+
+
+    --primary-text-color: #e2e8f0;
+    --secondary-text-color: #94a3b8;
+    --terceary-text-color: #42eeb7cc;
+
+
+    --primary-border-color: #2dd4bf1a;
+}
+
+body {
+    background-color: var(--primary-background-color);
+    font-family: "roboto";
+    color: var(--secondary-text-color);
+}
+
+a {
+    color: var(--terceary-text-color);
+    font-size: 0.84em;
+}
+
+@media (width < 1236px) {
+    body {
+        background-size: auto 100vh;
+    }
+}

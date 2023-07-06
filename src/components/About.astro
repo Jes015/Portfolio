@@ -1,0 +1,72 @@
+---
+const { title, subtitle, description } = {
+    title: "Jesus Oyola",
+    subtitle: "React Frontend Engineer",
+    description:
+        "My main focus these days is building products and leading projects for our clients at Upstatement. In my free time I've also releasedan online video course that covers everything you need to know tobuild a web app with the Spotify API.",
+};
+
+const socialNetworks = [
+    {
+        name: "Github",
+        url: "https://github.com/Jes015",
+        icon: "github",
+    },
+    {
+        name: "Twitter",
+        url: "https://twitter.com/Jes_15_",
+        icon: "github",
+    },
+];
+---
+
+<section class="about">
+    <header>
+        <h1 class="about__title">{title}</h1>
+        <h2 class="about__subtitle">{subtitle}</h2>
+    </header>
+    <main>
+        <p class="about__description">
+            {description}
+        </p>
+    </main>
+    <footer>
+        <div class="about__links-container">
+            {
+                socialNetworks.map((socialNetwork) => (
+                    <a href={socialNetwork.url} target="_blank">
+                        {socialNetwork.name}
+                    </a>
+                ))
+            }
+        </div>
+    </footer>
+</section>
+
+<style>
+    .about {
+        width: 100%;
+        padding: 1em;
+    }
+
+    .about__title {
+        color: var(--primary-text-color);
+        font-size: 3em;
+        margin-bottom: 0.1em;
+    }
+
+    .about__subtitle {
+        font-size: 1em;
+        margin-left: 0.3em;
+    }
+
+    .about__description {
+        max-width: 20em;
+        font-size: 0.85em;
+    }
+
+    .about__links-container {
+        display: flex;
+        gap: 0.2em;
+    }
+</style>
