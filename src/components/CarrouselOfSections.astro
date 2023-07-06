@@ -1,11 +1,12 @@
 ---
+import ProjectsSection from "@components/ProjectsSection.astro";
 import { CRoutes } from "@models/index";
 ---
 
 <section class="carrousel">
     <header></header>
     <main class="carrousel__sections-Contaier">
-        <section id={CRoutes.Projects}>Projects</section>
+        <ProjectsSection />
         <section id={CRoutes.Experience}>Expeee</section>
         <section id={CRoutes.Test}>Testtttttt</section>
     </main>
@@ -13,35 +14,35 @@ import { CRoutes } from "@models/index";
         <nav>
             <ul class="carrousel__links-list">
                 {
-                    Object.entries(CRoutes).map(([key, value]) => (
+                    Object.entries(CRoutes).map(([, value]) => (
                         <a href={`#${value}`}>{value}</a>
                     ))
                 }
             </ul>
         </nav>
     </footer>
+    <style>
+        .carrousel {
+            display: flex;
+            flex-direction: column;
+            padding: 1em;
+        }
+
+        .carrousel__links-list {
+            display: flex;
+            gap: 0.3em;
+        }
+
+        .carrousel__sections-Contaier {
+            flex-grow: 1;
+            overflow: hidden;
+            scroll-behavior: smooth;
+            white-space: nowrap;
+        }
+
+        section {
+            display: inline-block;
+            width: 100%;
+        }
+    </style>
 </section>
-<style>
-    .carrousel {
-        display: flex;
-        flex-direction: column;
-        padding: 1em;
-    }
-
-    .carrousel__links-list {
-        display: flex;
-        gap: 0.3em;
-    }
-
-    .carrousel__sections-Contaier {
-        flex-grow: 1;
-        overflow: hidden;
-        scroll-behavior: smooth;
-        white-space: nowrap;
-    }
-
-    section {
-        display: inline-block;
-        width: 300px;
-    }
-</style>

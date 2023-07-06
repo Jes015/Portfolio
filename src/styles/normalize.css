@@ -40,7 +40,8 @@ main {
  */
 
 h1,
-h2 {
+h2,
+h4 {
     font-size: 2em;
     margin: 0;
     padding: 0;
