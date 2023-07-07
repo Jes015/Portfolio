@@ -6,6 +6,14 @@ import Layout from "@src/layouts/Layout.astro";
 <Layout>
 	<div class="global-container">
 		<Portfolio />
+		<div class="madewith">
+			<span>Made with</span>
+			<a
+				class="madewith__tech"
+				href="https://astro.build/"
+				target="_blank">Astro</a
+			>
+		</div>
 	</div>
 </Layout>
 
@@ -16,5 +24,19 @@ import Layout from "@src/layouts/Layout.astro";
 		display: flex;
 		justify-content: center;
 		align-items: center;
+	}
+
+	.madewith {
+		position: absolute;
+		bottom: 0.5em;
+		right: 0.5em;
+
+		font-size: 0.8em;
+		font-weight: 900;
+	}
+
+	.madewith__tech {
+		color: #ff7e33;
+		text-transform: uppercase;
 	}
 </style>

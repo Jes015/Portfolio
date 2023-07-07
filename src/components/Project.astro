@@ -1,40 +1,116 @@
 ---
+import { Image } from "@astrojs/image/components";
 import type { IProject } from "@src/models";
 interface Props {
     data: IProject;
 }
 const {
-    data: { title, techs, demoURL, githubURL },
+    data: { title, techs, imageUrl, demoURL, githubURL },
 } = Astro.props;
 ---
 
 <div class="project">
     <header>
-        <div class="image"></div>
+        <div class="project__image-container">
+            {
+                imageUrl ? (
+                    <Image
+                        class="project__image"
+                        src={import(imageUrl)}
+                        alt={`${title} image`}
+                    />
+                ) : (
+                    <div class="project__image-not-found">
+                        <span>NOT</span>
+                        <span>FOUND</span>
+                    </div>
+                )
+            }
+        </div>
     </header>
-    <footer>
-        <span>{title}</span>
-        <ul>
-            {techs.map((tech) => <span>{tech}</span>)}
+    <main>
+        <span class="project__name">{title}</span>
+        <ul class="scroll project__tect-list">
+            {
+                techs.map((tech) => (
+                    <li>
+                        <span class="project__tech">{tech}</span>
+                    </li>
+                ))
+            }
         </ul>
-        <a href={demoURL} target="_blank">Demo</a>
-        <a href={githubURL} target="_blank">Github</a>
+    </main>
+    <footer>
+        <div class="project__ancords-container">
+            <a href={demoURL} target="_blank">Demo</a>
+            <a href={githubURL} target="_blank">Github</a>
+        </div>
     </footer>
 </div>
 
 <style>
     .project {
-        background-color: red;
-        display: inline-block;
         padding: 0.4em;
-        background-color: var(--secondary-background-color);
         border: 0.1em solid var(--primary-border-color);
     }
 
-    .image {
-        background-color: rebeccapurple;
+    .project__name {
+        display: block;
+        margin-top: 0.3em;
+        font-weight: 600;
+        text-transform: capitalize;
+        color: var(--primary-text-color);
+    }
+
+    .project__image-container {
+        background-color: var(--secondary-background-color);
         width: 100%;
         height: 7em;
         border-radius: 0.1em;
+    }
+
+    .project__image-not-found {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        font-weight: 900;
+    }
+
+    .project__image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .project__tect-list {
+        display: flex;
+        flex-wrap: wrap;
+        max-height: 3.8em;
+        margin-top: 0.3em;
+        overflow-y: auto;
+        scroll-snap-type: y mandatory;
+        gap: 0.3em;
+    }
+
+    .project__tect-list > * {
+        scroll-snap-align: start;
+    }
+
+    .project__tech {
+        display: inline-block;
+        padding: 0.2em;
+        border: 0.1em solid var(--primary-border-color);
+        border-radius: 0.3em;
+        font-size: 0.85em;
+        text-transform: capitalize;
+    }
+
+    .project__ancords-container {
+        display: flex;
+        gap: 0.2em;
+        justify-content: flex-end;
     }
 </style>
