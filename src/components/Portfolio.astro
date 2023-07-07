@@ -1,21 +1,30 @@
 ---
 import About from "@components/About.astro";
 import CarrouselOfSections from "@components/CarrouselOfSections.astro";
+import Navigation from "@components/Navigation.astro";
 ---
 
 <div class="portfolio-container">
-    <About />
+    <div>
+        <About />
+        <Navigation />
+    </div>
     <CarrouselOfSections />
 </div>
 <style is:global>
     .portfolio-container {
         display: flex;
         justify-content: center;
+        align-items: flex-start;
 
         border-radius: 0.2em;
     }
 
-    .portfolio-container > * {
+    .portfolio-container > section {
+        padding: 1em;
+        border: 0.1em solid var(--primary-border-color);
+    }
+    .portfolio-container > div > * {
         padding: 1em;
         border: 0.1em solid var(--primary-border-color);
     }
