@@ -3,36 +3,42 @@ import { CRoutes } from "@src/models";
 ---
 
 <section class="navigation">
-    <div>
-        <nav>
-            <ul>
-                {
-                    Object.entries(CRoutes).map(([, value]) => (
-                        <li>
-                            <a href={`#${value}`}>{value}</a>
-                        </li>
-                    ))
-                }
-            </ul>
-        </nav>
-    </div>
+    <nav class="navigation__nav">
+        <ul class="navigation__list">
+            {
+                Object.entries(CRoutes).map(([, value]) => (
+                    <li class="navigation__list-item">
+                        <a class="navigation__ancord" href={`#${value}`}>
+                            {value}
+                        </a>
+                    </li>
+                ))
+            }
+        </ul>
+    </nav>
 </section>
+
+<script src="@scripts/navigation.script"></script>
 
 <style>
     .navigation {
+        height: 100%;
         border: none !important;
         padding: 0 !important;
     }
-    ul {
-        height: 11.8em;
+    .navigation__nav {
+        height: 100%;
+    }
+    .navigation__list {
+        height: 100%;
         display: flex;
         flex-direction: column;
         width: 100%;
     }
-    li {
+    .navigation__list-item {
         flex-grow: 1;
     }
-    a {
+    .navigation__ancord {
         display: inline-flex;
         justify-content: center;
         align-items: center;
@@ -48,7 +54,8 @@ import { CRoutes } from "@src/models";
         border-radius: 0.1em;
     }
 
-    a:hover {
+    .navigation__ancord:hover,
+    .navigation__ancord-selected {
         background-color: var(--primary-border-color);
     }
 </style>

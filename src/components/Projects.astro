@@ -84,32 +84,20 @@ const projects: IProject[] = [
 ---
 
 <section class="projectsSection" id={CRoutes.Projects}>
-    <header>
-        <h4 class="projectsSection__title">{CRoutes.Projects}</h4>
-    </header>
-    <main>
-        <div class="projectsSection__project-container scroll">
-            {projects.map((projectData) => <Project data={projectData} />)}
-        </div>
-    </main>
+    <div class="projectsSection__project-container scroll">
+        {projects.map((projectData) => <Project data={projectData} />)}
+    </div>
 </section>
 
 <style>
     .projectsSection {
+        height: 100%;
     }
-
-    .projectsSection__title {
-        color: var(--primary-text-color);
-        margin-top: 0.3em;
-        text-transform: capitalize;
-    }
-
     .projectsSection__project-container {
         padding-right: 0.2em;
-        height: 22em;
+        height: 100%;
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(12em, 1fr));
-        gap: 0.4em;
         overflow-y: scroll;
     }
 </style>

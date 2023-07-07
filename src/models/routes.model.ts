@@ -1,7 +1,7 @@
 const CRoutes = {
     Projects: 'projects',
     Experience: 'experience',
-    Test: 'test',
+    Test: 'test'
 }
 
 export { CRoutes }

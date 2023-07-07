@@ -20,6 +20,9 @@
       "@models/*": [
         "./src/models/*"
       ],
+      "@scripts/*": [
+        "./src/scripts/*"
+      ],
     }
   },
   "extends": "astro/tsconfigs/strict"
