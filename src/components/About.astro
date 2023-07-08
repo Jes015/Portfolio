@@ -71,4 +71,17 @@ const socialNetworks = [
         display: flex;
         gap: 0.2em;
     }
+
+    @media (width <= 606px) {
+        .about {
+            text-align: center;
+        }
+
+        .about__description {
+            display: none;
+        }
+        .about__links-container {
+            justify-content: right;
+        }
+    }
 </style>

@@ -26,4 +26,20 @@ import { CRoutes } from "@src/models";
     .projectsSection__project-container > * {
         scroll-snap-align: start;
     }
+
+    .project:nth-of-type(1) {
+        background-color: var(--secondary-background-color);
+        background: var(--primary-background-color);
+        background: linear-gradient(
+            10deg,
+            rgba(26, 40, 75, 1) 0%,
+            rgba(15, 23, 42, 1) 50%,
+            rgba(26, 40, 75, 1) 100%
+        );
+        opacity: 1;
+    }
+
+    .projectsSection__project-container:hover .project:nth-of-type(1) {
+        background: transparent;
+    }
 </style>

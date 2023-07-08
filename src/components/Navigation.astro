@@ -20,11 +20,11 @@ import { CRoutes } from "@src/models";
 
 <script src="@scripts/navigation.script"></script>
 
-<style>
+<style is:global>
     .navigation {
         height: 100%;
-        border: none !important;
-        padding: 0 !important;
+        border: none;
+        padding: 0;
     }
     .navigation__nav {
         height: 100%;
@@ -49,13 +49,24 @@ import { CRoutes } from "@src/models";
         font-weight: 900;
         text-transform: capitalize;
         text-decoration: none;
-        background-color: var(--secondary-background-color);
         border: 0.1em solid var(--primary-border-color);
-        border-radius: 0.1em;
+        border-radius: 0.05em;
     }
 
     .navigation__ancord:hover,
     .navigation__ancord-selected {
         background-color: var(--primary-border-color);
+    }
+
+    @media (width <= 606px) {
+        .navigation__list {
+            height: 3em;
+            flex-direction: row;
+        }
+
+        .navigation__ancord {
+            border-top: none;
+            border-bottom: none;
+        }
     }
 </style>

@@ -17,15 +17,32 @@ import { CRoutes } from "@src/models";
     .experience {
         height: 100%;
     }
-
     .experience__container {
         display: flex;
         flex-wrap: wrap;
         height: 100%;
         overflow-y: scroll;
+        scroll-snap-type: y proximity;
     }
 
     .experience__container > * {
+        scroll-snap-align: start;
         flex-grow: 1;
+    }
+
+    .experience:nth-of-type(1) {
+        background-color: var(--secondary-background-color);
+        background: var(--primary-background-color);
+        background: linear-gradient(
+            10deg,
+            rgba(26, 40, 75, 1) 0%,
+            rgba(15, 23, 42, 1) 50%,
+            rgba(26, 40, 75, 1) 100%
+        );
+        opacity: 1;
+    }
+
+    .experience__container:hover .experience:nth-of-type(1) {
+        background: transparent;
     }
 </style>

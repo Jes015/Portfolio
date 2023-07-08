@@ -10,6 +10,7 @@
     --primary-border-color: #2dd4bf1a;
 
     --primary-textCard-font: 0.9em;
+    --secondary--textCard-font: 0.8em;
 
     --sb-track-color: #111a30;
     --sb-thumb-color: #2dd4bf1a;
@@ -17,7 +18,9 @@
 }
 
 body {
-    background-color: var(--primary-background-color);
+    background: var(--primary-background-color);
+    background: linear-gradient(34deg, rgba(26, 40, 75, 1) 0%, rgba(15, 23, 42, 1) 50%, rgba(26, 40, 75, 1) 100%);
+    background-repeat: no-repeat;
     font-family: "roboto";
     color: var(--secondary-text-color);
 }
@@ -36,7 +39,6 @@ a {
 }
 
 .scroll::-webkit-scrollbar-track {
-    background: var(--sb-track-color);
     border-radius: 0.1em;
 }
 

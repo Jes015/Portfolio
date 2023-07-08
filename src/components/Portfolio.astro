@@ -35,4 +35,16 @@ import Navigation from "@components/Navigation.astro";
         flex-grow: 1;
         border: 0.1em solid var(--primary-border-color);
     }
+
+    @media (width <= 606px) {
+        .portfolio__container {
+            width: 80%;
+            flex-direction: column;
+        }
+
+        .portfolio__nav-about-container {
+            width: 100%;
+            overflow: initial;
+        }
+    }
 </style>
