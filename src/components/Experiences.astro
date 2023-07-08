@@ -1,112 +1,16 @@
 ---
-import Experience from "@src/components/Experience.astro";
-import { CRoutes, CTechs } from "@src/models";
+import Experience from "@components/Experience.astro";
+import { experiences } from "@data/experiences.data";
+import { CRoutes } from "@src/models";
 ---
 
 <section id={CRoutes.Experience} class="scroll experience">
     <div class="scroll experience__container">
-        <Experience
-            data={{
-                company: "apple",
-                startDate: "2011-12",
-                endDate: "acutal",
-                description: "",
-                profesion: "Senior Linux Manager",
-                techs: [
-                    CTechs.Typescript,
-                    CTechs.React,
-                    CTechs.Firebase,
-                    CTechs.ReactRouterDom,
-                    CTechs.Sooner,
-                    "react winbox",
-                ],
-            }}
-        />
-        <Experience
-            data={{
-                company: "apple",
-                startDate: "2011-12",
-                endDate: "2012-12",
-                description: "Description",
-                profesion: "Senior Linux Manager",
-                techs: [
-                    CTechs.Typescript,
-                    CTechs.React,
-                    CTechs.Firebase,
-                    CTechs.ReactRouterDom,
-                    CTechs.Sooner,
-                    "react winbox",
-                ],
-            }}
-        />
-        <Experience
-            data={{
-                company: "apple",
-                startDate: "2011-12",
-                endDate: "2012-12",
-                description: "Description",
-                profesion: "Senior Linux Manager",
-                techs: [
-                    CTechs.Typescript,
-                    CTechs.React,
-                    CTechs.Firebase,
-                    CTechs.ReactRouterDom,
-                    CTechs.Sooner,
-                    "react winbox",
-                ],
-            }}
-        />
-        <Experience
-            data={{
-                company: "apple",
-                startDate: "2011-12",
-                endDate: "2012-12",
-                description: "Description",
-                profesion: "Senior Linux Manager",
-                techs: [
-                    CTechs.Typescript,
-                    CTechs.React,
-                    CTechs.Firebase,
-                    CTechs.ReactRouterDom,
-                    CTechs.Sooner,
-                    "react winbox",
-                ],
-            }}
-        />
-        <Experience
-            data={{
-                company: "apple",
-                startDate: "2011-12",
-                endDate: "2012-12",
-                description: "Description",
-                profesion: "Senior Linux Manager",
-                techs: [
-                    CTechs.Typescript,
-                    CTechs.React,
-                    CTechs.Firebase,
-                    CTechs.ReactRouterDom,
-                    CTechs.Sooner,
-                    "react winbox",
-                ],
-            }}
-        />
-        <Experience
-            data={{
-                company: "apple",
-                startDate: "2011-12",
-                endDate: "2012-12",
-                description: "Description",
-                profesion: "Senior Linux Manager",
-                techs: [
-                    CTechs.Typescript,
-                    CTechs.React,
-                    CTechs.Firebase,
-                    CTechs.ReactRouterDom,
-                    CTechs.Sooner,
-                    "react winbox",
-                ],
-            }}
-        />
+        {
+            experiences.map((experienceData) => (
+                <Experience data={experienceData} />
+            ))
+        }
     </div>
 </section>
 <style is:global>

@@ -7,13 +7,26 @@ interface Props {
 }
 
 const {
-    data: { profesion, company, endDate, startDate, description, techs },
+    data: {
+        profesion,
+        company,
+        endDate,
+        startDate,
+        description,
+        companyURL,
+        techs,
+    },
 } = Astro.props;
 ---
 
 <div class="experience">
     <header class="experience__header">
-        <span class="experience__title">{profesion} · {company}</span>
+        <div>
+            <span class="experience__title">{profesion} ·</span>
+            <a class="experience__anchor" href={companyURL} target="_blank">
+                {company}
+            </a>
+        </div>
         <div class="experience__date-container">
             <time class="experience__time" datetime={startDate}>
                 {startDate}
@@ -57,7 +70,7 @@ const {
     }
 
     .experience__title {
-        font-size: 0.9em;
+        font-size: var(--primary-textCard-font);
         color: var(--primary-text-color);
         text-transform: capitalize;
     }
@@ -66,9 +79,13 @@ const {
         font-size: 0.74em;
     }
 
-    .experience__time {
+    .experience__anchor {
+        text-transform: capitalize;
     }
 
+    .experience__main {
+        flex-grow: 1;
+    }
     .experience__description {
         max-width: 100%;
         white-space: normal;

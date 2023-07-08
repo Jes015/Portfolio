@@ -26,6 +26,9 @@
       "@assets/*": [
         "./src/assets/*"
       ],
+      "@data/*": [
+        "./src/data/*"
+      ],
     }
   },
   "extends": "astro/tsconfigs/strict"

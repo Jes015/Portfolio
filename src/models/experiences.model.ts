@@ -4,6 +4,7 @@ interface IExperience {
     endDate: string
     description: string
     company: string
+    companyURL: string
     techs: string[]
 }
 
