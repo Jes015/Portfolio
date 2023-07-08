@@ -1,6 +1,7 @@
 ---
 import { Image } from "@astrojs/image/components";
 import type { IProject } from "@src/models";
+import TechList from "./TechList.astro";
 interface Props {
     data: IProject;
 }
@@ -28,16 +29,10 @@ const {
             }
         </div>
     </header>
-    <main>
+    <main class="project__main">
         <span class="project__name">{title}</span>
         <ul class="scroll project__tect-list">
-            {
-                techs.map((tech) => (
-                    <li>
-                        <span class="project__tech">{tech}</span>
-                    </li>
-                ))
-            }
+            <TechList techs={techs} />
         </ul>
     </main>
     <footer>
@@ -50,13 +45,19 @@ const {
 
 <style>
     .project {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5em;
         padding: 0.4em;
         border: 0.1em solid var(--primary-border-color);
     }
 
+    .project__main {
+        flex-grow: 1;
+    }
+
     .project__name {
         display: block;
-        margin-top: 0.3em;
         font-weight: 600;
         text-transform: capitalize;
         color: var(--primary-text-color);
@@ -85,32 +86,10 @@ const {
         object-fit: cover;
     }
 
-    .project__tect-list {
-        display: flex;
-        flex-wrap: wrap;
-        max-height: 3.8em;
-        margin-top: 0.3em;
-        overflow-y: auto;
-        scroll-snap-type: y mandatory;
-        gap: 0.3em;
-    }
-
-    .project__tect-list > * {
-        scroll-snap-align: start;
-    }
-
-    .project__tech {
-        display: inline-block;
-        padding: 0.2em;
-        border: 0.1em solid var(--primary-border-color);
-        border-radius: 0.3em;
-        font-size: 0.85em;
-        text-transform: capitalize;
-    }
-
     .project__ancords-container {
         display: flex;
-        gap: 0.2em;
         justify-content: flex-end;
+        gap: 0.2em;
+        font-size: 0.9em;
     }
 </style>

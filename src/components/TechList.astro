@@ -1,0 +1,41 @@
+---
+interface Props {
+    techs: string[];
+}
+const { techs } = Astro.props;
+---
+
+<ul class="scroll tech__list">
+    {
+        techs.map((tech) => (
+            <li>
+                <span class="tech__span">{tech}</span>
+            </li>
+        ))
+    }
+</ul>
+
+<style>
+    .tech__list {
+        margin-top: 0.3em;
+        display: flex;
+        flex-wrap: wrap;
+        max-height: 3.8em;
+        overflow-y: auto;
+        scroll-snap-type: y mandatory;
+        gap: 0.3em;
+    }
+
+    .project__tect-list > * {
+        scroll-snap-align: start;
+    }
+
+    .tech__span {
+        display: inline-block;
+        padding: 0.2em;
+        border: 0.1em solid var(--primary-border-color);
+        border-radius: 0.3em;
+        font-size: 0.85em;
+        text-transform: capitalize;
+    }
+</style>

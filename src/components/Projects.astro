@@ -1,5 +1,5 @@
 ---
-import { CRoutes, IProject } from "@src/models";
+import { CRoutes, CTechs, IProject } from "@src/models";
 import Project from "./Project.astro";
 
 const rootImagePath = "../assets/";
@@ -9,23 +9,11 @@ const getImagePathByName = (name: string) => {
     return pathImages[rootImagePath + name + ".png"].name;
 };
 
-const Techs = {
-    JavaScript: "javaScript",
-    Typescript: "tyepeScript",
-    React: "react",
-    Nextjs: "next",
-    Astro: "astro",
-    Firebase: "firebase",
-    ReactRouterDom: "react router dom",
-    Sooner: "sooner",
-    AutoAnimate: "AutoAnimate",
-};
-
 const projects: IProject[] = [
     {
         title: "time manager",
         imageUrl: getImagePathByName("time-manager"),
-        techs: [Techs.JavaScript, Techs.ReactRouterDom, Techs.React],
+        techs: [CTechs.JavaScript, CTechs.ReactRouterDom, CTechs.React],
         githubURL: "https://github.com/Jes015/Time-Manager",
         demoURL: "https://time-manager-zeta.vercel.app/",
     },
@@ -33,11 +21,11 @@ const projects: IProject[] = [
         title: "nexus catalyst",
         imageUrl: getImagePathByName("dashboard-for-developers"),
         techs: [
-            Techs.Typescript,
-            Techs.React,
-            Techs.Firebase,
-            Techs.ReactRouterDom,
-            Techs.Sooner,
+            CTechs.Typescript,
+            CTechs.React,
+            CTechs.Firebase,
+            CTechs.ReactRouterDom,
+            CTechs.Sooner,
             "react winbox",
         ],
         githubURL: "https://github.com/Jes015/NexusCatalyst",
@@ -46,7 +34,7 @@ const projects: IProject[] = [
     {
         title: "dev vault",
         imageUrl: getImagePathByName("dev-vault"),
-        techs: [Techs.Typescript, Techs.Nextjs, Techs.AutoAnimate],
+        techs: [CTechs.Typescript, CTechs.Nextjs, CTechs.AutoAnimate],
         githubURL: "https://github.com/Jes015/Dev-Vault/",
         demoURL: "https://dev-vault-ochre.vercel.app/",
     },
