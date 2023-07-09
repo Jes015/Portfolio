@@ -1,5 +1,4 @@
 ---
-import { Image } from "@astrojs/image/components";
 import type { IProject } from "@src/models";
 import TechList from "./TechList.astro";
 interface Props {
@@ -15,9 +14,9 @@ const {
         <div class="project__image-container">
             {
                 imageUrl ? (
-                    <Image
+                    <img
                         class="project__image"
-                        src={import(imageUrl)}
+                        src={imageUrl}
                         alt={`${title} image`}
                     />
                 ) : (
@@ -32,9 +31,7 @@ const {
     <main class="project__main">
         <span class="project__title">{title}</span>
         <p class="project__description">{description}</p>
-        <ul class="scroll project__tect-list">
-            <TechList techs={techs} />
-        </ul>
+        <TechList techs={techs} />
     </main>
     <footer>
         <div class="project__ancords-container">
@@ -106,12 +103,7 @@ const {
     }
 
     .project:hover {
-        background: linear-gradient(
-            10deg,
-            rgba(26, 40, 75, 1) 0%,
-            rgba(15, 23, 42, 1) 50%,
-            rgba(26, 40, 75, 1) 100%
-        ) !important;
+        background: var(--primary-card-background) !important;
         opacity: 1;
     }
 </style>

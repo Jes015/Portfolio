@@ -1,9 +1,10 @@
 import { CTechs, type IProject } from "@src/models"
 
-const rootImagePath = "../assets/"
+const rootImagePath = "/"
+const extension = 'webp'
 
 const getImagePathByName = (name: string) => {
-    return `${rootImagePath}${name}.png`
+    return `${rootImagePath}${name}.${extension}`
 }
 
 export const projects: IProject[] = [

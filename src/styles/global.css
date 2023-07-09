@@ -9,6 +9,11 @@
 
     --primary-border-color: #2dd4bf1a;
 
+    --primary-card-background: linear-gradient(10deg,
+            rgba(26, 40, 75, 1) 0%,
+            rgba(15, 23, 42, 1) 50%,
+            rgba(26, 40, 75, 1) 100%);
+    ;
     --primary-textCard-font: 0.9em;
     --secondary--textCard-font: 0.8em;
 
@@ -49,13 +54,19 @@ a {
 }
 
 
-@media (width <=2560px) {
+@media (width > 2000px) {
     body {
         font-size: 30px;
     }
 }
 
-@media (width <=1440px) {
+@media (width <=2235px) {
+    body {
+        font-size: 25px;
+    }
+}
+
+@media (width <=1753px) {
     body {
         font-size: 16px;
     }
