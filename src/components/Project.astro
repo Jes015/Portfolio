@@ -1,6 +1,6 @@
 ---
-import type { IProject } from "@src/models";
-import TechList from "./TechList.astro";
+import type { IProject } from "@src/models"
+import TechList from "./TechList.astro"
 interface Props {
     data: IProject;
 }
@@ -51,6 +51,7 @@ const {
 
         opacity: 0.8;
         transition: 0.3s opacity ease;
+        overflow: hidden;
     }
 
     .project__main {
@@ -70,6 +71,7 @@ const {
         width: 101%;
         white-space: normal;
         font-size: var(--secondary--textCard-font);
+        text-wrap: balance;
     }
 
     .project__image-container {

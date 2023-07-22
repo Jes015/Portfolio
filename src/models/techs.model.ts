@@ -8,6 +8,12 @@ const CTechs = {
     ReactRouterDom: "react router dom",
     Sooner: "sooner",
     AutoAnimate: "AutoAnimate",
+    Zod: "zod",
+    ReactHookForm: "ReactHookForm",
+    cypress: "Crypess",
+    joyUI: "JoyUI",
+    axios: "axios",
+    jsonBin: 'jsonBin'
 }
 
 export { CTechs }
