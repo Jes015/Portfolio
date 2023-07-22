@@ -1,21 +1,23 @@
 ---
 const { title, subtitle, description } = {
     title: "Jesus Oyola",
-    subtitle: "React Frontend Engineer",
+    subtitle: "Frontend Developer",
     description:
-        "My main focus these days is building products and leading projects for our clients at Upstatement. In my free time I've also releasedan online video course that covers everything you need to know tobuild a web app with the Spotify API.",
+        "Passionate about React and devoted to studying it for the last 6 months. Enthusiastic about Linux, Nest, and Astro. My discipline drives constant growth in developing innovative projects.",
 };
 
 const socialNetworks = [
     {
+        name: "Linkedin",
+        url: "https://www.linkedin.com/in/jesus-oyola-b9b530284/",
+    },
+    {
         name: "Github",
         url: "https://github.com/Jes015",
-        icon: "github",
     },
     {
         name: "Twitter",
         url: "https://twitter.com/Jes_15_",
-        icon: "github",
     },
 ];
 ---
@@ -48,6 +50,9 @@ const socialNetworks = [
         width: auto;
         min-width: 30%;
         padding: 1em;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5em;
     }
 
     .about__title {

@@ -14,6 +14,16 @@
             rgba(15, 23, 42, 1) 50%,
             rgba(26, 40, 75, 1) 100%);
     ;
+    --secondary-card-background: linear-gradient(84deg,
+            rgba(26, 40, 75, 1) 0%,
+            rgba(15, 23, 42, 1) 50%,
+            rgba(26, 40, 75, 1) 100%);
+    ;
+
+    --terceary-card-background: linear-gradient(100deg,
+            rgba(15, 23, 42, 0) -10%,
+            rgba(26, 40, 75, 1) 40%,
+            rgba(15, 23, 42, 0) 110%);
     --primary-textCard-font: 0.9em;
     --secondary--textCard-font: 0.8em;
 

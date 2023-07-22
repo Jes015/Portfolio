@@ -1,110 +1,114 @@
 ---
-import type { IExperience } from "@src/models/";
-import TechList from "./TechList.astro";
+import type { IExperience } from "@src/models/"
+import TechList from "./TechList.astro"
 
 interface Props {
-    data: IExperience;
+  data: IExperience;
 }
 
 const {
-    data: {
-        profesion,
-        company,
-        endDate,
-        startDate,
-        description,
-        companyURL,
-        techs,
-    },
+  data: {
+    profesion,
+    company,
+    endDate,
+    startDate,
+    description,
+    companyURL,
+    techs,
+  },
 } = Astro.props;
 ---
 
 <div class="experience">
-    <header class="experience__header">
-        <div>
-            <span class="experience__title">{profesion} ·</span>
-            <a class="experience__anchor" href={companyURL} target="_blank">
-                {company}
-            </a>
-        </div>
-        <div class="experience__date-container">
-            <time class="experience__time" datetime={startDate}>
-                {startDate}
-            </time>
-            <span>-</span>
-            <time class="experience__time" datetime={endDate}>
-                {endDate}
-            </time>
-        </div>
-    </header>
-    <main class="experience__main">
-        <p class="experience__description">
-            Gracias a la inciativa del creador de contenido MoureDev tuve la
-            oportunidad de dar una charla "Abrazando al fracas" con el fin de
-            ayudar a la gente a cambiar su percepción del fracaso y acogerlo
-            como un motor para mejorar.
-        </p>
-    </main>
-    <footer>
-        <TechList techs={techs} />
-    </footer>
+  <header class="experience__header">
+    <div>
+      <span class="experience__title">{profesion} ·</span>
+      <a class="experience__anchor" href={companyURL} target="_blank">
+        {company}
+      </a>
+    </div>
+    <div class="experience__date-container">
+      <time class="experience__time" datetime={startDate}>
+        {startDate}
+      </time>
+      <span>-</span>
+      <time class="experience__time" datetime={endDate}>
+        {endDate}
+      </time>
+    </div>
+  </header>
+  <main class="experience__main">
+    <p class="experience__description scroll">
+      {description}
+    </p>
+  </main>
+  <footer>
+    <TechList techs={techs} />
+  </footer>
 </div>
 <style>
+  .experience {
+    height: 45%;
+    width: 50%;
+    display: inline-flex;
+    flex-direction: column;
+    opacity: 0.75;
+    gap: 0.6em;
+    padding: 0.8em;
+    border: 0.1em solid var(--primary-border-color);
+    transition: 0.3s opacity ease;
+  }
+
+  .experience__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .experience__title {
+    font-size: var(--primary-textCard-font);
+    color: var(--primary-text-color);
+    text-transform: capitalize;
+  }
+
+  .experience__date-container {
+    font-size: 0.74em;
+  }
+
+  .experience__anchor {
+    text-transform: capitalize;
+  }
+
+  .experience__main {
+    flex-grow: 1;
+  }
+  .experience__description {
+    max-width: 100%;
+    white-space: normal;
+
+    font-size: var(--secondary--textCard-font);
+
+    max-height: 5.94em;
+    overflow-y: auto;
+    text-wrap: balance;
+  }
+
+  .experience__description::-webkit-scrollbar {
+    width: 0.4em !important;
+  }
+  .experience:hover {
+    background: var(--primary-card-background) !important;
+    opacity: 1;
+  }
+
+  @media (width <= 606px) {
     .experience {
-        height: 45%;
-        width: 50%;
-        display: inline-flex;
-        flex-direction: column;
-        opacity: 0.75;
-        gap: 0.6em;
-        padding: 0.8em;
-        border: 0.1em solid var(--primary-border-color);
-        transition: 0.3s opacity ease;
+      height: auto;
     }
-
     .experience__header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+      flex-direction: column;
+      gap: 0.2em;
+      align-items: flex-start;
     }
-
-    .experience__title {
-        font-size: var(--primary-textCard-font);
-        color: var(--primary-text-color);
-        text-transform: capitalize;
-    }
-
-    .experience__date-container {
-        font-size: 0.74em;
-    }
-
-    .experience__anchor {
-        text-transform: capitalize;
-    }
-
-    .experience__main {
-        flex-grow: 1;
-    }
-    .experience__description {
-        max-width: 100%;
-        white-space: normal;
-
-        font-size: var(--secondary--textCard-font);
-    }
-
-    .experience:hover {
-        background: var(--primary-card-background) !important;
-        opacity: 1;
-    }
-
-    @media (width <= 606px) {
-        .experience {
-            height: auto;
-        }
-        .experience__header {
-            flex-direction: column;
-            gap: 0.2em;
-            align-items: flex-start;
-        }
-    }
+  }
 </style>
