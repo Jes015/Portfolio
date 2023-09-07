@@ -1,7 +1,7 @@
 ---
-import About from "@components/About.astro";
-import CarrouselOfSections from "@components/CarrouselOfSections.astro";
-import Navigation from "@components/Navigation.astro";
+import About from "@components/About.astro"
+import CarrouselOfSections from "@components/CarrouselOfSections.astro"
+import Navigation from "@components/Navigation.astro"
 ---
 
 <div class="portfolio__container">
@@ -28,12 +28,8 @@ import Navigation from "@components/Navigation.astro";
         overflow: hidden;
     }
 
-    .portfolio__container > section {
-        border: 0.1em solid var(--primary-border-color);
-    }
     .portfolio__container > .portfolio__nav-about-container > * {
         flex-grow: 1;
-        border: 0.1em solid var(--primary-border-color);
     }
 
     @media (width <= 606px) {
