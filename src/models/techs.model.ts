@@ -1,19 +1,21 @@
 const CTechs = {
-    JavaScript: "javaScript",
-    Typescript: "tyepeScript",
-    React: "react",
-    Nextjs: "next",
     Astro: "astro",
+    AutoAnimate: "AutoAnimate",
+    axios: "axios",
+    cypress: "Crypess",
     Firebase: "firebase",
+    i18next: 'i18next',
+    JavaScript: "javaScript",
+    joyUI: "JoyUI",
+    jsonBin: 'jsonBin',
+    million: 'million',
+    Nextjs: "next.js",
+    React: "react",
+    ReactHookForm: "ReactHookForm",
     ReactRouterDom: "react router dom",
     Sooner: "sooner",
-    AutoAnimate: "AutoAnimate",
+    swr: 'swr',
+    Typescript: "typeScript",
     Zod: "zod",
-    ReactHookForm: "ReactHookForm",
-    cypress: "Crypess",
-    joyUI: "JoyUI",
-    axios: "axios",
-    jsonBin: 'jsonBin'
 }
-
 export { CTechs }

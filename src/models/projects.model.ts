@@ -1,7 +1,7 @@
 interface IProject {
     title: string
     description: string
-    imageUrl: string
+    imageUrls: string[]
     techs: string[]
     githubURL: string
     demoURL: string
