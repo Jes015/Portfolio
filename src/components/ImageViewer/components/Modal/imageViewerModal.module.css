@@ -1,0 +1,54 @@
+.imageViewer {
+    display: flex;
+}
+
+.imageViewer__modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    backdrop-filter: blur(3px);
+    top: 0;
+    left: 0;
+    width: 100vw;
+    width: 100dvw;
+    height: 100vh;
+    height: 100dvh;
+    border: none;
+    background-color: transparent;
+    z-index: 100;
+}
+
+.imageViewer__header {
+    display: flex;
+    justify-content: space-between;
+    color: var(--primary-text-color);
+    text-transform: capitalize;
+}
+
+.imageViewer__title {
+    font-size: 1.3em;
+    font-weight: 600;
+}
+
+.imageViewer__button-control {
+    color: var(--primary-text-color);
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.imageViewer__image {
+    width: 35em;
+    aspect-ratio: 16 / 8;
+    border-radius: 0.3em;
+}
+
+.imagePreview--open {
+    display: flex;
+}
+
+.imagePreview:hover {
+    background-color: rgba(1, 1, 1, 0.3);
+    opacity: 100%;
+}
