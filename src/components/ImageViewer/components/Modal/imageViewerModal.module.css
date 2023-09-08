@@ -39,7 +39,7 @@
 }
 
 .imageViewer__image {
-    width: 35em;
+    width: 60em;
     aspect-ratio: 16 / 8;
     border-radius: 0.3em;
 }
