@@ -1,17 +1,24 @@
 import { CTechs, type IProject } from "@src/models"
 
 const rootImagePath = "/"
-const extension = 'webp'
+const extension = 'png'
 
-const getImagePathByName = (name: string) => {
-    return `${rootImagePath}${name}.${extension}`
+const getImagesPathByName = (name: string, maxImages: number) => {
+    let routes: string[] = []
+    let tempRoute = ''
+    Array(maxImages).fill(null).map((_, index) => {
+        tempRoute = `${rootImagePath}${name}-${index + 1}.${extension}`
+        routes.push(tempRoute)
+    })
+    
+    return routes
 }
 
 export const projects: IProject[] = [
     {
         title: "CulinaryAlchemy",
         description: "Online platform that aims to revolutionize the way people discover, share, and explore recipes.",
-        imageUrls: [getImagePathByName('culinary-alchemy'), getImagePathByName('time-manager')],
+        imageUrls: getImagesPathByName("culinary-alchemy", 11),
         techs: [
             CTechs.React,
             CTechs.Astro,
@@ -31,7 +38,7 @@ export const projects: IProject[] = [
     {
         title: "time manager",
         description: "App for optimize and manage your time App for optimize and manage your time.",
-        imageUrls: [getImagePathByName("time-manager")],
+        imageUrls: getImagesPathByName("time-manager", 4), 
         techs: [CTechs.JavaScript, CTechs.ReactRouterDom, CTechs.React],
         githubURL: "https://github.com/Jes015/Time-Manager",
         demoURL: "https://time-manager-zeta.vercel.app/",
@@ -39,7 +46,7 @@ export const projects: IProject[] = [
     {
         title: "nexus catalyst",
         description: "Dashboard for web developers to optimize and manage their time",
-        imageUrls: [getImagePathByName("dashboard-for-developers")],
+        imageUrls: getImagesPathByName("nexus-catalyst", 3),
         techs: [
             CTechs.Typescript,
             CTechs.React,
@@ -54,7 +61,7 @@ export const projects: IProject[] = [
     {
         title: "dev vault",
         description: "List of tools for web developers",
-        imageUrls: [getImagePathByName("dev-vault")],
+        imageUrls: getImagesPathByName("dev-vault", 1),
         techs: [CTechs.Typescript, CTechs.Nextjs, CTechs.AutoAnimate, CTechs.jsonBin],
         githubURL: "https://github.com/Jes015/Dev-Vault/",
         demoURL: "https://dev-vault-ochre.vercel.app/",
