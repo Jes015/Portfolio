@@ -22,7 +22,7 @@ const {
 <div class="experience">
   <header class="experience__header">
     <div>
-      <span class="experience__title">{profesion} ·</span>
+      <h3 class="experience__title">{profesion} ·</h3>
       <a class="experience__anchor" href={companyURL} target="_blank">
         {company}
       </a>
@@ -68,6 +68,7 @@ const {
 
   .experience__title {
     font-size: var(--primary-textCard-font);
+    font-weight: 600;
     color: var(--primary-text-color);
     text-transform: capitalize;
   }
@@ -85,11 +86,8 @@ const {
   }
   .experience__description {
     max-width: 100%;
-    white-space: normal;
-
     font-size: var(--secondary--textCard-font);
-
-    max-height: 5.94em;
+    max-height: 5em;
     overflow-y: auto;
     text-wrap: balance;
   }
