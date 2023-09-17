@@ -1,10 +1,11 @@
+import { type TImageArray } from "@src/models"
 import { WatchImage } from '@components/Icons'
 import { ImageViewerModal } from '@components/ImageViewer/components/'
 import { useState } from 'react'
 import styles from './imageViewer.module.css'
 
 interface IProps {
-    images: string[]
+    images: TImageArray
     projectTitle: string
 }
 

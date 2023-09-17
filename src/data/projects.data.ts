@@ -1,13 +1,15 @@
-import { CTechs, type IProject } from "@src/models"
+import { CTechs, type IImage, type IProject, type TImageArray } from "@src/models"
 
 const rootImagePath = "/"
-const extension = 'png'
+const extension = 'webp'
 
 const getImagesPathByName = (name: string, maxImages: number) => {
-    let routes: string[] = []
-    let tempRoute = ''
+    let routes: TImageArray = []
+
+    let tempRoute: IImage | null = null
+
     Array(maxImages).fill(null).map((_, index) => {
-        tempRoute = `${rootImagePath}${name}-${index + 1}.${extension}`
+        tempRoute = { normal: `${rootImagePath}${name}-${index + 1}.${extension}`, resized: `${rootImagePath}${name}-${index + 1}-resized.${extension}`}
         routes.push(tempRoute)
     })
     

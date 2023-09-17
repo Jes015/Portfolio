@@ -1,10 +1,18 @@
 interface IProject {
     title: string
     description: string
-    imageUrls: string[]
+    imageUrls: IImage[]
     techs: string[]
     githubURL: string
     demoURL: string
 }
 
-export type { IProject }
+interface IImage {
+    normal: string
+    resized: string
+}
+
+export type TImageArray = IImage[]
+
+export type { IImage, IProject }
+

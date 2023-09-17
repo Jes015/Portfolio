@@ -32,6 +32,10 @@
     --sb-size: 0.2em;
 }
 
+*, *::after {
+    box-sizing: border-box;
+}
+
 body {
     background: var(--primary-background-color);
     background: linear-gradient(34deg, rgba(26, 40, 75, 1) 0%, rgba(15, 23, 42, 1) 50%, rgba(26, 40, 75, 1) 100%);

@@ -1,4 +1,5 @@
 ---
+import { Image } from '@components/Image/Image'
 import { ImageViewer } from '@components/ImageViewer'
 import type { IProject } from "@src/models"
 import TechList from "./TechList.astro"
@@ -13,13 +14,13 @@ const {
 <div class="project">
     <header>
         <div class="project__image-container">
-            <ImageViewer projectTitle={title} images={imageUrls} client:only="react" />
             {
                 imageUrls[0] ? (
-                    <img
-                        class="project__image"
-                        src={imageUrls[0]}
+                    <Image
+                        src={imageUrls[0].normal}
+                        srcPlaceHolder={imageUrls[0].resized}
                         alt={`${title} image`}
+                        client:only="react"
                     />
                 ) : (
                     <div class="project__image-not-found">
@@ -28,6 +29,7 @@ const {
                     </div>
                 )
             }
+            <ImageViewer projectTitle={title} images={imageUrls} client:load />
         </div>
     </header>
     <main class="project__main">
@@ -47,6 +49,7 @@ const {
     .project {
         display: flex;
         flex-direction: column;
+        justify-content: stretch;
         gap: 0.5em;
         padding: 0.4em;
         border: 0.1em solid var(--primary-border-color);
@@ -81,11 +84,16 @@ const {
     }
 
     .project__image-container {
+        display: flex;
+        justify-content: stretch;
+        align-items: stretch;
         position: relative;
         background-color: var(--secondary-background-color);
         width: 100%;
+        height: 100%;
         height: 7em;
         border-radius: 0.1em;
+        overflow: hidden;
     }
 
     .project__image-not-found {
