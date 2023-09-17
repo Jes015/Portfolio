@@ -1,11 +1,12 @@
 import { ArrowLeft, ArrowRight } from '@components/Icons'
 import { useImageViewer } from '@components/ImageViewer/hooks'
+import type { TImageArray } from '@src/models'
 import { createPortal } from 'react-dom'
 import styles from './imageViewerModal.module.css'
 
 interface IProps {
     projectTitle: string
-    images: string[]
+    images: TImageArray
     handleOnClickForOpenClose: () => void
 }
 
