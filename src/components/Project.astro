@@ -1,5 +1,5 @@
 ---
-import { Image } from '@components/Image/Image'
+import { CustomImage } from '@components/CustomImage'
 import { ImageViewer } from '@components/ImageViewer'
 import type { IProject } from "@src/models"
 import TechList from "./TechList.astro"
@@ -16,11 +16,11 @@ const {
         <div class="project__image-container">
             {
                 imageUrls[0] ? (
-                    <Image
+                    <CustomImage
                         src={imageUrls[0].normal}
                         srcPlaceHolder={imageUrls[0].resized}
                         alt={`${title} image`}
-                        client:only="react"
+                        client:load
                     />
                 ) : (
                     <div class="project__image-not-found">
