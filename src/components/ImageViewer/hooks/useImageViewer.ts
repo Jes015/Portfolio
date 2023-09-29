@@ -1,29 +1,29 @@
 import type { TImageArray } from "@src/models"
-import { useRef, useState } from "react"
+import { useEffect, useState } from "react"
 
 interface IParams {
     images: TImageArray
 }
 
 export const useImageViewer = ({ images }: IParams) => {
-    const actualImageIndex = useRef(0)
-    const [actualImageSrc, setActualImage] = useState(images[actualImageIndex.current].normal)
+    const [actualImageIndex, setActualImageIndex] = useState(0)
+
+    useEffect(() => {
+        const $imageElement = document.getElementById(String(actualImageIndex))
+        $imageElement?.scrollIntoView({ behavior: 'smooth' })
+    }, [actualImageIndex])
 
     const nextImage = () => {
-        const isTheLastImage = actualImageIndex.current === images.length - 1
+        const isTheLastImage = actualImageIndex === images.length - 1
         if (isTheLastImage) return
-
-        actualImageIndex.current += 1
-        setActualImage(images[actualImageIndex.current].normal)
+        setActualImageIndex(actualImageIndex + 1)
     }
 
     const previousImage = () => {
-        const isTheFirstImage = actualImageIndex.current === 0
-        if(isTheFirstImage) return
-
-        actualImageIndex.current -= 1
-        setActualImage(images[actualImageIndex.current].normal)
+        const isTheFirstImage = actualImageIndex === 0
+        if (isTheFirstImage) return
+        setActualImageIndex(actualImageIndex - 1)
     }
 
-    return { actualImageSrc, nextImage, previousImage, actualImageIndex: actualImageIndex.current + 1 }
+    return { nextImage, previousImage, indexForUser: actualImageIndex + 1 }
 }
