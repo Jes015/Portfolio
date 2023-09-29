@@ -5,9 +5,11 @@ interface IProps {
     src: string
     srcPlaceHolder: string
     alt: string
+    id?: string
+    className?: string
 }
 
-export const CustomImage: React.FC<IProps> = ({ src, srcPlaceHolder }) => {
+export const CustomImage: React.FC<IProps> = ({ src, srcPlaceHolder, className, id }) => {
     const [showPlaceholder, setShowPlaceholder] = useState(true)
     const placeHolderImageRef = useRef<HTMLImageElement>()
     const ImageRef = useRef<HTMLImageElement>()
@@ -35,18 +37,22 @@ export const CustomImage: React.FC<IProps> = ({ src, srcPlaceHolder }) => {
     }
 
     return (
-        <div className={
-            [
-                styles.image__container,
-                showPlaceholder && styles['image--loading']
-            ].join(' ')
-        }>
+        <div
+            {...{id}}
+            className={
+                [
+                    className ?? styles.image__container,
+                    showPlaceholder && styles['image--loading']
+                    
+                ].join(' ')
+            }
+        >
             <img
                 ref={placeHolderImageRef as LegacyRef<HTMLImageElement>}
                 src={srcPlaceHolder}
                 className={[
                     styles.image,
-                    styles['image--blur']
+                    styles['image--blur'],
                 ].join(' ')}
                 style={{
                     display: 'block'
@@ -59,7 +65,11 @@ export const CustomImage: React.FC<IProps> = ({ src, srcPlaceHolder }) => {
                 style={{
                     display: showPlaceholder ? 'none' : 'block',
                 }}
-                className={[styles.image, showPlaceholder && styles['image--opacity']].join(' ')}
+                className={[
+                    styles.image,
+                    (showPlaceholder && styles['image--opacity']),
+                ].join(' ')
+                }
                 alt='project image'
             />
         </div>
