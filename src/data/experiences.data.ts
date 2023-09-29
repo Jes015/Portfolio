@@ -11,7 +11,7 @@ export const experiences = [
         techs: [
             CTechs.React,
             CTechs.Astro,
-            CTechs.cypress, 
+            CTechs.playwright, 
             CTechs.Typescript, 
             CTechs.axios, 
             CTechs.Zod, 

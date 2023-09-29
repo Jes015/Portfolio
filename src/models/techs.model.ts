@@ -2,7 +2,7 @@ const CTechs = {
     Astro: "astro",
     AutoAnimate: "AutoAnimate",
     axios: "axios",
-    cypress: "Crypess",
+    playwright: "Playwright",
     Firebase: "firebase",
     i18next: 'i18next',
     JavaScript: "javaScript",
