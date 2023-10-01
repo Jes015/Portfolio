@@ -1,6 +1,8 @@
 ---
+import { type TTechsArray } from '@src/models'
+
 interface Props {
-    techs: string[];
+    techs: TTechsArray;
 }
 const { techs } = Astro.props;
 ---
@@ -9,7 +11,7 @@ const { techs } = Astro.props;
     {
         techs.map((tech) => (
             <li>
-                <span class="tech__span">{tech}</span>
+                <span class="tech__span">{tech.name}</span>
             </li>
         ))
     }

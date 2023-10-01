@@ -1,12 +1,12 @@
 ---
 import Project from "@components/Project.astro"
-import { projects } from "@data/projects.data"
+import { CProjects } from "@src/data/projects.data"
 import { CRoutes } from "@src/models"
 ---
 
 <section class="projectsSection" id={CRoutes.Projects}>
   <div class="projectsSection__project-container scroll">
-    {projects.map((projectData) => <Project data={projectData} />)}
+    {CProjects.map((projectData) => <Project data={projectData} />)}
   </div>
 </section>
 

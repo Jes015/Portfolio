@@ -1,0 +1,50 @@
+---
+import { CSkills } from "@src/data/skills.data"
+import { CRoutes } from "@src/models"
+import Skill from "../Skill.astro"
+
+const skillAnimation = {
+    animationTime: 0,
+    opacity: 1,
+};
+
+---
+
+<section id={CRoutes.Skills} class="skills">
+    {
+        CSkills.map((skill) => {
+                skillAnimation.animationTime += 0.2;
+
+                const shouldRestTheOpacity = skillAnimation.opacity >= 0.3;
+
+                if (shouldRestTheOpacity) {
+                    skillAnimation.opacity -= 0.045;
+                }
+
+                return (
+                    <Skill
+                        skillData={skill}
+                        style={{
+                            "--animation-delay": `${skillAnimation.animationTime}s`,
+                            "--opacity": skillAnimation.opacity,
+                        }}
+                    />
+                );
+            })
+    }
+</section>
+
+<style is:global>
+    .skills {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(13em, 1fr));
+    }
+
+    .skills > * {
+        animation: skillAnimation 2s infinite;
+        background: var(--quaternary-card-background);
+        animation-delay: var(--animation-delay);
+        opacity: var(--opacity);
+    }
+
+</style>

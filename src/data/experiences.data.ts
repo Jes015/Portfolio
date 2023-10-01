@@ -1,6 +1,6 @@
-import { CTechs } from "@src/models"
+import { CTechs, type TExperiencesArray } from "@src/models"
 
-export const experiences = [
+export const CExperiences: TExperiencesArray = [
     {
         company: "CulinaryAlchemy",
         startDate: "2023-07",

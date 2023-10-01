@@ -16,7 +16,7 @@ const getImagesPathByName = (name: string, maxImages: number) => {
     return routes
 }
 
-export const projects: IProject[] = [
+export const CProjects: IProject[] = [
     {
         title: "CulinaryAlchemy",
         description: "Online platform that aims to revolutionize the way people discover, share, and explore recipes.",
