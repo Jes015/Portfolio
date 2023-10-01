@@ -16,7 +16,6 @@ export const genereSkills = (techs: TTechsArray, projects: TProjectArray, experi
         return newSkill
     })
 
-    const newSkillsSorted = newSkills.toSorted((a, b) => b.projects.length - a.projects.length)
-    console.log({newSkills: newSkills[0], newSkillsSorted: newSkillsSorted[0]})
+    const newSkillsSorted = [...newSkills].sort((a, b) => b.projects.length - a.projects.length)
     return newSkillsSorted
 }
