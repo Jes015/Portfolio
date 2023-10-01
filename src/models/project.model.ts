@@ -1,18 +1,18 @@
-interface IProject {
+import type { TTechsArray } from "@src/models"
+
+export interface IProject {
     title: string
     description: string
     imageUrls: IImage[]
-    techs: string[]
+    techs: TTechsArray
     githubURL: string
     demoURL: string
 }
 
-interface IImage {
+export interface IImage {
     normal: string
     resized: string
 }
 
 export type TImageArray = IImage[]
-
-export type { IImage, IProject }
-
+export type TProjectArray = IProject[]

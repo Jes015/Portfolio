@@ -24,15 +24,21 @@
             rgba(15, 23, 42, 0) -10%,
             rgba(26, 40, 75, 1) 40%,
             rgba(15, 23, 42, 0) 110%);
+
+    --quaternary-card-background: linear-gradient(42deg,
+            rgba(26, 40, 75, 1) 0%,
+            rgba(25, 33, 52, 0.5) 100%,
+            rgba(26, 40, 75, 1) 100%);
+            
     --primary-textCard-font: 0.9em;
     --secondary--textCard-font: 0.8em;
-
     --sb-track-color: #111a30;
     --sb-thumb-color: #2dd4bf1a;
     --sb-size: 0.2em;
 }
 
-*, *::after {
+*,
+*::after {
     box-sizing: border-box;
 }
 

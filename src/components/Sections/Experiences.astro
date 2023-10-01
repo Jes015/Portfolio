@@ -1,23 +1,24 @@
 ---
 import Experience from "@components/Experience.astro"
-import { experiences } from "@data/experiences.data"
+import { CExperiences } from "@src/data/experiences.data"
 import { CRoutes } from "@src/models"
 ---
 
 <section id={CRoutes.Experience} class="scroll experience">
     <div class="scroll experience__container">
         {
-            experiences.map((experienceData) => (
+            CExperiences.map((experienceData) => (
                 <Experience data={experienceData} />
             ))
         }
-        <div style="min-width: 50%;"></div>
+        <div style="min-width: 50%"></div>
     </div>
 </section>
 <style is:global>
     .experience__container {
         display: flex;
         flex-wrap: wrap;
+        align-items: start;
         height: 100%;
         overflow-y: scroll;
     }
