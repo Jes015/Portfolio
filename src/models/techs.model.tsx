@@ -1,4 +1,4 @@
-import { IconAstro, IconAxios, IconBell, IconBxlFirebase, IconCodeJson, IconConsoleLine, IconDiamond, IconI18next, IconJS, IconMillion, IconMui, IconNextjs, IconPlaywright, IconReact, IconReacthookform, IconReactrouter, IconSWR, IconTypescript } from "@src/components/Icons"
+import { IconAstro, IconAxios, IconBell, IconBxlFirebase, IconCodeJson, IconConsoleLine, IconDiamond, IconI18next, IconJS, IconMillion, IconMui, IconNextjs, IconPlaywright, IconReact, IconReacthookform, IconReactrouter, IconSWR, IconShipWheel, IconTypescript } from "@src/components/Icons"
 import type { TIcon } from "@src/models"
 
 export interface ITech {
@@ -83,6 +83,14 @@ const CTechs: TTechRecord = {
         name: "zod",
         Icon: IconDiamond
     },
+    ReactWinbox : {
+        name: 'react winbox',
+        Icon: IconReact
+    },
+    Driverjs: {
+        name: 'Driver.js',
+        Icon: IconShipWheel
+    }
 }
 
 export { CTechs }
