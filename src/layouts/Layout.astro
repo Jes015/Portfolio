@@ -1,5 +1,6 @@
 ---
 import "@fontsource/roboto"
+import AnimatedBackground from "@src/components/AnimatedBackground.astro"
 import "@styles/global.css"
 import "@styles/normalize.css"
 
@@ -16,6 +17,7 @@ const title = "Jes015";
         <title>{title}</title>
     </head>
     <body>
+        <AnimatedBackground />
         <div id="modalElement" />
         <slot />
     </body>
