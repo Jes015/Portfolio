@@ -10,7 +10,7 @@ export const useImageViewer = ({ images }: IParams) => {
 
     useEffect(() => {
         const $imageElement = document.getElementById(String(actualImageIndex))
-        $imageElement?.scrollIntoView({ behavior: 'smooth' })
+        $imageElement?.scrollIntoView({ behavior: 'instant' })
     }, [actualImageIndex])
 
     const nextImage = () => {
