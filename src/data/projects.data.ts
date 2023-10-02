@@ -1,20 +1,5 @@
-import { CTechs, type IImage, type IProject, type TImageArray } from "@src/models"
-
-const rootImagePath = "/"
-const extension = 'webp'
-
-const getImagesPathByName = (name: string, maxImages: number) => {
-    let routes: TImageArray = []
-
-    let tempRoute: IImage | null = null
-
-    Array(maxImages).fill(null).map((_, index) => {
-        tempRoute = { normal: `${rootImagePath}${name}-${index + 1}.${extension}`, resized: `${rootImagePath}${name}-${index + 1}-resized.${extension}`}
-        routes.push(tempRoute)
-    })
-    
-    return routes
-}
+import { CTechs, type IProject } from "@src/models"
+import { getImagesPathByName } from "@src/utils"
 
 export const CProjects: IProject[] = [
     {
@@ -24,8 +9,8 @@ export const CProjects: IProject[] = [
         techs: [
             CTechs.React,
             CTechs.Astro,
-            CTechs.playwright, 
-            CTechs.Typescript, 
+            CTechs.playwright,
+            CTechs.Typescript,
             CTechs.axios, 
             CTechs.Zod, 
             CTechs.swr,
@@ -38,16 +23,22 @@ export const CProjects: IProject[] = [
         demoURL: "https://culinary-alchemy-web-app.vercel.app/",
     },
     {
-        title: "time manager",
-        description: "App for optimize and manage your time App for optimize and manage your time.",
-        imageUrls: getImagesPathByName("time-manager", 4), 
-        techs: [CTechs.JavaScript, CTechs.ReactRouterDom, CTechs.React],
-        githubURL: "https://github.com/Jes015/Time-Manager",
-        demoURL: "https://time-manager-zeta.vercel.app/",
+        title: 'Blog',
+        description: 'My blog: web dev tips, productivity, and valuable skills.',
+        imageUrls: getImagesPathByName("blog", 2),
+        techs: [
+            CTechs.Astro,
+            CTechs.React,
+            CTechs.playwright,
+            CTechs.Typescript,
+            CTechs.Driverjs
+        ],
+        githubURL: 'https://github.com/Jes015/Blog',
+        demoURL: 'https://blog-one-murex.vercel.app/'
     },
     {
         title: "nexus catalyst",
-        description: "Dashboard for web developers to optimize and manage their time",
+        description: "Dashboard for web developers to optimize and manage their time.",
         imageUrls: getImagesPathByName("nexus-catalyst", 3),
         techs: [
             CTechs.Typescript,
@@ -55,14 +46,22 @@ export const CProjects: IProject[] = [
             CTechs.Firebase,
             CTechs.ReactRouterDom,
             CTechs.Sooner,
-            "react winbox",
+            CTechs.ReactWinbox,
         ],
         githubURL: "https://github.com/Jes015/NexusCatalyst",
         demoURL: "https://nexus-catalyst.vercel.app/",
     },
     {
+        title: "time manager",
+        description: "App for optimize and manage your time.",
+        imageUrls: getImagesPathByName("time-manager", 4), 
+        techs: [CTechs.JavaScript, CTechs.ReactRouterDom, CTechs.React],
+        githubURL: "https://github.com/Jes015/Time-Manager",
+        demoURL: "https://time-manager-zeta.vercel.app/",
+    },
+    {
         title: "dev vault",
-        description: "List of tools for web developers",
+        description: "List of tools for web developers.",
         imageUrls: getImagesPathByName("dev-vault", 1),
         techs: [CTechs.Typescript, CTechs.Nextjs, CTechs.AutoAnimate, CTechs.jsonBin],
         githubURL: "https://github.com/Jes015/Dev-Vault/",
