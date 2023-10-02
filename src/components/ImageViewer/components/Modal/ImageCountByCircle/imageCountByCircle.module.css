@@ -1,0 +1,18 @@
+.imageCountByCircle__container {
+    display: flex;
+    gap: 0.5em;
+}
+.imageCountByCircle {
+    width: 0.8em;
+    height: 0.8em;
+    border-radius: 100%;
+    background-color: white;
+}
+
+.imageCountByCircle--no-selected {
+    opacity: 30%;
+}
+
+.imageCountByCircle--selected {
+    opacity: 100%;
+}
