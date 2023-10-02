@@ -1,7 +1,7 @@
 ---
-import CarrouselOfSections from "@components/CarrouselOfSections.astro"
-import Navigation from "@components/Navigation.astro"
-import About from "@components/Sections/About.astro"
+import CarrouselOfSections from "@components/CarrouselOfSections.astro";
+import Navigation from "@components/Navigation.astro";
+import About from "@components/Sections/About.astro";
 ---
 
 <div class="portfolio__container">
@@ -11,6 +11,9 @@ import About from "@components/Sections/About.astro"
     </div>
     <CarrouselOfSections />
 </div>
+
+<script src="@scripts/scrollSection.script"></script>
+
 <style is:global>
     .portfolio__container {
         display: flex;
