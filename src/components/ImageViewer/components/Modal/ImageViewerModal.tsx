@@ -2,8 +2,13 @@ import { ArrowLeft, ArrowRight } from '@components/Icons'
 import { useImageViewer } from '@components/ImageViewer/hooks'
 import { CustomImage } from '@src/components/CustomImage'
 import type { TImageArray } from '@src/models'
+import { Suspense, lazy } from 'react'
 import { createPortal } from 'react-dom'
 import styles from './imageViewerModal.module.css'
+
+
+const ImageCountByNumber = lazy(() => import('./ImageCountByNumber/ImageCountByNumber'))
+const ImageCountByCircle = lazy(() => import('./ImageCountByCircle/ImageCountByCircle'))
 
 interface IProps {
     projectTitle: string
@@ -27,7 +32,15 @@ export const ImageViewerModal: React.FC<IProps> = ({ handleOnClickForOpenClose, 
                 <div>
                     <header className={styles.imageViewer__header}>
                         <span className={styles.imageViewer__title} >{projectTitle} images</span>
-                        <span className={styles.imageViewer__count}>{indexForUser} / {images.length}</span>
+                        <Suspense>
+                            {
+                                images.length > 7
+                                    ?
+                                    <ImageCountByNumber actualImageIndex={indexForUser} imageCount={images.length} />
+                                    :
+                                    <ImageCountByCircle actualImageIndex={indexForUser} imageCount={images.length} />
+                            }
+                        </Suspense>
                     </header>
                     <main>
                         <div className={styles['imageViewer__images-container']}>
@@ -35,7 +48,7 @@ export const ImageViewerModal: React.FC<IProps> = ({ handleOnClickForOpenClose, 
                                 images.map((imageData, index) => (
                                     <CustomImage
                                         key={index}
-                                        id ={String(index)}
+                                        id={String(index)}
                                         src={imageData.normal}
                                         srcPlaceHolder={imageData.resized}
                                         alt='project image'
