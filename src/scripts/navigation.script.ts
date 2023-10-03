@@ -24,7 +24,18 @@ const NavigationContext = () => {
     const main = () => {
         const listElement = document.getElementsByClassName("navigation__list")[0] as HTMLUListElement
 
-        setElementStyles(listElement.children[0].children[0] as HTMLAnchorElement)
+        let $actualItemSelected: null | HTMLAnchorElement = null
+
+        listElement.childNodes.forEach((element) => {
+            const $anchor = element.childNodes[0] as HTMLAnchorElement
+            if($anchor.textContent === location.hash.slice(1)) {
+                $actualItemSelected = $anchor
+            }
+        })
+
+        if ($actualItemSelected != null) {
+            setElementStyles($actualItemSelected)
+        }
 
         listElement.addEventListener("click", ({ target, currentTarget }) => {
             clickEvent(target, currentTarget)
