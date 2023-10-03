@@ -10,7 +10,7 @@ interface Props {
 const { style, skillData } = Astro.props;
 ---
 
-<article class="skill" {...{ style }}>
+<article id="skill" class="skill" {...{ style }}>
     <header class="skill__header">
         <skillData.Icon className="skill__icon-tech" />
         <section class="skill__tech-data">

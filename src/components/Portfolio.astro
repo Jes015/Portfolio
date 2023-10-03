@@ -2,10 +2,12 @@
 import CarrouselOfSections from "@components/CarrouselOfSections.astro";
 import Navigation from "@components/Navigation.astro";
 import About from "@components/Sections/About.astro";
+import Driver from "@components/Driver/Driver.astro"
 ---
 
 <div class="portfolio__container">
     <div class="portfolio__nav-about-container">
+        <Driver/>
         <About />
         <Navigation />
     </div>
@@ -16,6 +18,7 @@ import About from "@components/Sections/About.astro";
 
 <style is:global>
     .portfolio__container {
+        position: relative;
         display: flex;
         justify-content: center;
         align-items: flex-start;
