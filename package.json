@@ -20,6 +20,8 @@
     "react-dom": "^18.0.0"
   },
   "devDependencies": {
+    "@playwright/test": "^1.38.1",
+    "@types/node": "^20.8.2",
     "husky": "^8.0.3",
     "rome": "12.1.3"
   }
