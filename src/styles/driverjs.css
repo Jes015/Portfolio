@@ -1,0 +1,80 @@
+.driver-popover.driverjs-theme {
+    background-color: var(--primary-background-color);
+    color: var(--primary-text-color);
+    border: 0.1em solid var(--primary-border-color);
+}
+
+.driver-popover.driverjs-theme .driver-popover-title {
+    font-size: clamp(15px, 2vw, 20px);
+}
+
+.driver-popover.driverjs-theme .driver-popover-title,
+.driver-popover.driverjs-theme .driver-popover-description,
+.driver-popover.driverjs-theme .driver-popover-progress-text {
+    color: var(--primary-text-color);
+}
+
+.driver-popover-description {
+    font: clamp(10px, 2vw, 14px)/normal sans-serif !important;
+}
+
+.driver-popover-next-btn {
+    font: clamp(10px, 2vw, 12px)/normal sans-serif !important;
+}
+
+.driver-popover-progress-text {
+    font: clamp(10px, 2vw, 13px)/normal sans-serif !important;
+}
+.driver-popover.driverjs-theme button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.2em;
+    border: 0.1em solid var(--primary-border-color);
+    border-radius: 0.42857142857em;
+    color: var(--primary-text-color);
+    background-color: var(--primary-card-background) !important;
+    cursor: pointer;
+    text-shadow: none;
+    padding: 0.5em;
+}
+
+.driver-popover.driverjs-theme button:hover {
+    background-color: var(--secondary-card-background);
+    border-color: var(--primary-border-color);
+}
+
+.driver-popover.driverjs-theme .driver-popover-navigation-btns {
+    gap: 3px;
+}
+
+
+.driver-popover.driverjs-theme .driver-popover-close-btn {
+    color: #9b9b9b;
+}
+
+.driver-popover.driverjs-theme .driver-popover-close-btn:hover {
+    color: var(--primary-text-color);
+}
+
+.driver-popover.driverjs-theme .driver-popover-arrow-side-left.driver-popover-arrow {
+    border-left-color: var(--anchor-color);
+}
+
+.driver-popover.driverjs-theme .driver-popover-arrow-side-right.driver-popover-arrow {
+    border-left-color: var(--anchor-color);
+}
+
+.driver-popover.driverjs-theme .driver-popover-arrow-side-top.driver-popover-arrow {
+    border-left-color: var(--anchor-color);
+}
+
+.driver-popover.driverjs-theme .driver-popover-arrow-side-bottom.driver-popover-arrow {
+    border-left-color: var(--anchor-color);
+}
+
+@media (width <= 606px) {
+    .driver-popover.driverjs-theme {
+        max-width: 5em;
+    }
+}

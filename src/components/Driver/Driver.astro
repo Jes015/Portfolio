@@ -1,0 +1,40 @@
+---
+import { IconInfoCircle } from "@components/Icons";
+---
+
+<div class="driver" id="driver">
+    <IconInfoCircle />
+</div>
+
+<style>
+    .driver {
+        position: absolute;
+        top: -1.5em;
+        right: 0;
+        cursor: pointer;
+    }
+
+    @media (width <= 606px) {
+        .driver {
+            top: -7.8em;
+        }
+    }
+</style>
+<script>
+    const driver = document.getElementById("driver");
+
+    const handleOnClick = async () => {
+        const DriverManager = await import("@src/utils/globalDriver.util").then(
+            (module) => module.DriverManager,
+        );
+        const localSteps = await import("@src/data/driverjs.data").then(
+            (module) => module.localSteps,
+        );
+
+        const driver = new DriverManager([], localSteps);
+
+        driver.showSteps();
+    };
+
+    driver?.addEventListener("click", handleOnClick);
+</script>

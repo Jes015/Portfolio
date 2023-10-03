@@ -1,3 +1,4 @@
+export * from './driverjs.model'
 export * from './experiences.model'
 export * from './icon.model'
 export * from './project.model'
