@@ -1,37 +1,37 @@
 {
   "compilerOptions": {
     "baseUrl": "./",
+    "jsx": "react-jsx",
+    "jsxImportSource": "react",
     "paths": {
-      "@src/*": [
-        "./src/*"
-      ],
-      "@pages/*": [
-        "./src/pages/*"
-      ],
-      "@layouts/*": [
-        "./src/layouts/*"
+      "@assets/*": [
+        "./src/assets/*"
       ],
       "@components/*": [
         "./src/components/*"
       ],
-      "@styles/*": [
-        "./src/styles/*"
+      "@data/*": [
+        "./src/data/*"
+      ],
+      "@layouts/*": [
+        "./src/layouts/*"
       ],
       "@models/*": [
         "./src/models/*"
       ],
+      "@pages/*": [
+        "./src/pages/*"
+      ],
       "@scripts/*": [
         "./src/scripts/*"
       ],
-      "@assets/*": [
-        "./src/assets/*"
+      "@src/*": [
+        "./src/*"
       ],
-      "@data/*": [
-        "./src/data/*"
+      "@styles/*": [
+        "./src/styles/*"
       ]
-    },
-    "jsx": "react-jsx",
-    "jsxImportSource": "react"
+    }
   },
   "extends": "astro/tsconfigs/strict"
 }
