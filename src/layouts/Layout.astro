@@ -4,21 +4,39 @@ import AnimatedBackground from "@src/components/AnimatedBackground.astro"
 import "@styles/global.css"
 import "@styles/normalize.css"
 
-const title = "Jes015";
+const title = "Jes015's portfolio";
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
         <meta name="description" content="Astro description" />
         <meta name="viewport" content="width=device-width" />
+        <meta
+            name="description"
+            content="Enthusiastic about Linux, Nest, and Astro."
+        />
+        <meta
+            property="og:image"
+            content="https://avatars.githubusercontent.com/u/120581623?v=4"
+        />
+        <meta name="twitter:title" content="Jes015's portfolio" />
+        <meta
+            name="twitter:description"
+            content="Enthusiastic about Linux, Nest, and Astro. "
+        />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+            name="twitter:image"
+            content="https://avatars.githubusercontent.com/u/120581623?v=4"
+        />
         <meta name="generator" content={Astro.generator} />
         <title>{title}</title>
     </head>
     <body>
         <AnimatedBackground />
-        <div id="modalElement" />
+        <div id="modalElement"></div>
         <slot />
     </body>
 </html>
