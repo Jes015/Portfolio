@@ -10,6 +10,7 @@ export const useImageViewer = ({ images }: IParams) => {
 
     useEffect(() => {
         const $imageElement = document.getElementById(String(actualImageIndex))
+
         $imageElement?.scrollIntoView({ behavior: 'instant' })
     }, [actualImageIndex])
 
@@ -25,5 +26,5 @@ export const useImageViewer = ({ images }: IParams) => {
         setActualImageIndex(actualImageIndex - 1)
     }
 
-    return { nextImage, previousImage, indexForUser: actualImageIndex + 1 }
+    return { nextImage, previousImage, actualImageIndex }
 }
