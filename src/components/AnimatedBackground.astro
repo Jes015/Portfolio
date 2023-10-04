@@ -9,11 +9,13 @@ const startsCount = 120;
                 .fill(null)
                 .map(() => {
                     const animationDelay = Math.random() * 80 + 1;
+                    const animationTime = Math.random() * 20 + 5
 
                     return (
                         <span
                             style={{
                                 "--animation-delay": animationDelay + "s",
+                                "--animation-time": animationTime + "s"
                             }}
                             class="animatedBackground__star-container"
                         >
@@ -46,17 +48,19 @@ const startsCount = 120;
 
     .animatedBackground__star-container {
         position: relative;
-        display: inline-block;
+        display: inline-flex;
         margin-left: 1em;
-        width: 0.125rem;
-        height: 0.125rem;
-        animation: startMovement 20s infinite linear;
+        margin-top: 1em;
+        width: 0.145rem;
+        height: 0.145rem;
+        animation: startMovement var(--animation-time) infinite linear;
         animation-delay: var(--animation-delay);
         background: linear-gradient(
             to right,
             rgb(100, 116, 139),
             rgba(0, 0, 0, 0)
         );
+        filter: drop-shadow(0px 3px 0.5px white);
     }
 
     .animatedBackground__star {
@@ -70,6 +74,7 @@ const startsCount = 120;
             rgb(100, 116, 139),
             rgba(0, 0, 0, 0)
         );
+        filter: drop-shadow(0px 3px 2px white);
     }
 
     @keyframes startMovement {
