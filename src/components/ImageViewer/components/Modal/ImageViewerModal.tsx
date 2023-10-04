@@ -7,7 +7,6 @@ import { createPortal } from 'react-dom'
 import styles from './imageViewerModal.module.css'
 
 
-const ImageCountByNumber = lazy(() => import('./ImageCountByNumber/ImageCountByNumber'))
 const ImageCountByCircle = lazy(() => import('./ImageCountByCircle/ImageCountByCircle'))
 
 interface IProps {
