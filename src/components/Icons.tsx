@@ -23,7 +23,7 @@ export const WatchImage: TIcon = (props) => {
     )
 }
 
-export const ArrowRight = () => {
+export const ArrowRight: TIcon = (props) => {
     return (
         <svg
             width="24px"
@@ -33,6 +33,7 @@ export const ArrowRight = () => {
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
             color="currentColor"
+            {...props}
         >
             <path
                 d="M3 12h18m0 0l-8.5-8.5M21 12l-8.5 8.5"
@@ -45,7 +46,7 @@ export const ArrowRight = () => {
     )
 }
 
-export const ArrowLeft = () => {
+export const ArrowLeft: TIcon = (props) => {
     return (
         <svg
             width="24px"
@@ -55,6 +56,7 @@ export const ArrowLeft = () => {
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
             color="currentColor"
+            {...props}
         >
             <path
                 d="M21 12H3m0 0l8.5-8.5M3 12l8.5 8.5"

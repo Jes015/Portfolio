@@ -33,9 +33,11 @@ const NavigationContext = () => {
             }
         })
 
-        if ($actualItemSelected != null) {
-            setElementStyles($actualItemSelected)
-        }
+        if ($actualItemSelected == null) {
+            $actualItemSelected = listElement.childNodes[0].childNodes[0] as HTMLAnchorElement
+        }        
+        
+        setElementStyles($actualItemSelected)
 
         listElement.addEventListener("click", ({ target, currentTarget }) => {
             clickEvent(target, currentTarget)

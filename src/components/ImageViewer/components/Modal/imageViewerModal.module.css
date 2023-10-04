@@ -32,10 +32,24 @@
 }
 
 .imageViewer__button-control {
+    display: flex;
+    justify-content: center;
     color: var(--primary-text-color);
     background-color: transparent;
     border: none;
     cursor: pointer;
+    width: 2.55em;
+}
+
+.imageViewer__button-icon {
+    width: 2.55em;
+}
+
+.imageViewer__button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2.55em;
 }
 
 .imageViewer__images-container {
