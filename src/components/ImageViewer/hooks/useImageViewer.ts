@@ -26,5 +26,9 @@ export const useImageViewer = ({ images }: IParams) => {
         setActualImageIndex(actualImageIndex - 1)
     }
 
-    return { nextImage, previousImage, actualImageIndex }
+    const setImageByIndex = (index: number) => {
+        setActualImageIndex(index)
+    }
+
+    return { nextImage, previousImage, actualImageIndex, setImageByIndex }
 }

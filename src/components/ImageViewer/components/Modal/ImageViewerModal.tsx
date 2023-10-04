@@ -17,7 +17,7 @@ interface IProps {
 }
 
 export const ImageViewerModal: React.FC<IProps> = ({ handleOnClickForOpenClose, images, projectTitle }) => {
-    const { nextImage, previousImage, actualImageIndex } = useImageViewer({ images })
+    const { nextImage, previousImage, actualImageIndex, setImageByIndex } = useImageViewer({ images })
 
     const indexForUser = actualImageIndex + 1
 
@@ -44,13 +44,8 @@ export const ImageViewerModal: React.FC<IProps> = ({ handleOnClickForOpenClose, 
                     <header className={styles.imageViewer__header}>
                         <span className={styles.imageViewer__title} >{projectTitle} images</span>
                         <Suspense>
-                            {
-                                images.length > 7
-                                    ?
-                                    <ImageCountByNumber actualImageIndex={indexForUser} imageCount={images.length} />
-                                    :
-                                    <ImageCountByCircle actualImageIndex={indexForUser} imageCount={images.length} />
-                            }
+
+                            <ImageCountByCircle {...{ setImageByIndex, actualImageIndex }} imageCount={images.length} />
                         </Suspense>
                     </header>
                     <main>
