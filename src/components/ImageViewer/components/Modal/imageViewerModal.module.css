@@ -38,18 +38,17 @@
     background-color: transparent;
     border: none;
     cursor: pointer;
-    width: 2.55em;
 }
 
 .imageViewer__button-icon {
-    width: 2.55em;
+    width: clamp(1.5em, 2vw, 2.55em);
 }
 
 .imageViewer__button-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 2.55em;
+    width: clamp(1.5em, 2vw, 2.55em);
 }
 
 .imageViewer__images-container {
