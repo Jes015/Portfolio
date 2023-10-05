@@ -1,17 +1,28 @@
 import type { IImage, TImageArray } from "@src/models"
+import { readdirSync } from "fs"
 
-const rootImagePath = "/"
-const extension = 'webp'
+const getMaxImagesByProjectName = (projectName: string) => {
+    const files = readdirSync('./public')
+    const filesFiltered = files.filter((project) => project.includes(projectName))
+    const filesCount = filesFiltered.length / 2 // <-- this /2 is because of the resized images
 
-export const getImagesPathByName = (name: string, maxImages: number) => {
+    return filesCount
+}
+
+export const getImagesPathByName = (name: string) => {
+    const rootImagePath = "/"
+    const extension = 'webp'
+
     let routes: TImageArray = []
 
     let tempRoute: IImage | null = null
 
+    const maxImages = getMaxImagesByProjectName(name)
+
     Array(maxImages).fill(null).map((_, index) => {
-        tempRoute = { normal: `${rootImagePath}${name}-${index + 1}.${extension}`, resized: `${rootImagePath}${name}-${index + 1}-resized.${extension}`}
+        tempRoute = { normal: `${rootImagePath}${name}-${index + 1}.${extension}`, resized: `${rootImagePath}${name}-${index + 1}-resized.${extension}` }
         routes.push(tempRoute)
     })
-    
+
     return routes
 }
