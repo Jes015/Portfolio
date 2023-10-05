@@ -32,18 +32,24 @@ export const CustomImage: React.FC<IProps> = ({ src, srcPlaceHolder, className, 
     const hidePlaceHolderImage = () => {
         setShowPlaceholder(false)
 
-        if (placeHolderImageRef.current == null) return
-        placeHolderImageRef.current.style.display = 'none'
+        const timeout = setTimeout(() => {
+            if (placeHolderImageRef.current == null) {
+                clearTimeout(timeout)
+                return
+            }
+            placeHolderImageRef.current.remove()
+            clearTimeout(timeout)
+        }, 1000)
     }
 
     return (
         <div
-            {...{id}}
+            {...{ id }}
             className={
                 [
                     className ?? styles.image__container,
                     showPlaceholder && styles['image--loading']
-                    
+
                 ].join(' ')
             }
         >
@@ -54,20 +60,17 @@ export const CustomImage: React.FC<IProps> = ({ src, srcPlaceHolder, className, 
                     styles.image,
                     styles['image--blur'],
                 ].join(' ')}
-                style={{
-                    display: 'block'
-                }}
                 alt='project image blurred'
             />
             <img
                 ref={ImageRef as LegacyRef<HTMLImageElement>}
                 {...{ src }}
                 style={{
-                    display: showPlaceholder ? 'none' : 'block',
+                    zIndex: showPlaceholder ? -10 : 0,
                 }}
                 className={[
                     styles.image,
-                    (showPlaceholder && styles['image--opacity']),
+                    (!showPlaceholder && styles['image--no-opacity']),
                 ].join(' ')
                 }
                 alt='project image'

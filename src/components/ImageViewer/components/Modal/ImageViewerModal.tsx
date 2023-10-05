@@ -6,7 +6,6 @@ import { Suspense, lazy } from 'react'
 import { createPortal } from 'react-dom'
 import styles from './imageViewerModal.module.css'
 
-
 const ImageCountByCircle = lazy(() => import('./ImageCountByCircle/ImageCountByCircle'))
 
 interface IProps {
@@ -17,8 +16,6 @@ interface IProps {
 
 export const ImageViewerModal: React.FC<IProps> = ({ handleOnClickForOpenClose, images, projectTitle }) => {
     const { nextImage, previousImage, actualImageIndex, setImageByIndex } = useImageViewer({ images })
-
-    const indexForUser = actualImageIndex + 1
 
     const handleOnClick = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
         event.stopPropagation()
@@ -43,8 +40,10 @@ export const ImageViewerModal: React.FC<IProps> = ({ handleOnClickForOpenClose, 
                     <header className={styles.imageViewer__header}>
                         <span className={styles.imageViewer__title} >{projectTitle} images</span>
                         <Suspense>
-
-                            <ImageCountByCircle {...{ setImageByIndex, actualImageIndex }} imageCount={images.length} />
+                            {
+                                images.length > 1 &&
+                                    <ImageCountByCircle {...{ setImageByIndex, actualImageIndex }} imageCount={images.length} />
+                            }
                         </Suspense>
                     </header>
                     <main>
