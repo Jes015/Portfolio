@@ -1,4 +1,5 @@
 .imageViewer {
+    position: relative;
     display: flex;
 }
 
@@ -17,6 +18,19 @@
     border: none;
     background-color: transparent;
     z-index: 100;
+}
+
+.imageViewer__close-button-container {
+    position: absolute;
+    right: -1.2em;
+    top: -1.2em;
+}
+
+.imageViewer__close-button {
+    cursor: pointer;
+    color: var(--primary-text-color);
+    width: 3em;
+    height: 3em;
 }
 
 .imageViewer__header {

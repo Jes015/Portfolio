@@ -1,4 +1,4 @@
-import { ArrowLeft, ArrowRight } from '@components/Icons'
+import { ArrowLeft, ArrowRight, IconClose } from '@components/Icons'
 import { useImageViewer } from '@components/ImageViewer/hooks'
 import { CustomImage } from '@src/components/CustomImage'
 import type { TImageArray } from '@src/models'
@@ -24,6 +24,12 @@ export const ImageViewerModal: React.FC<IProps> = ({ handleOnClickForOpenClose, 
     return createPortal(
         <div className={styles.imageViewer__modal} onClick={handleOnClickForOpenClose}>
             <div onClick={handleOnClick} className={styles.imageViewer}>
+                <div 
+                    className={styles['imageViewer__close-button-container']}
+                    onClick={handleOnClickForOpenClose}
+                >
+                    <IconClose className={styles['imageViewer__close-button']} />
+                </div>
                 <div className={styles["imageViewer__button-container"]}>
                     {
                         actualImageIndex !== 0 &&
@@ -42,7 +48,7 @@ export const ImageViewerModal: React.FC<IProps> = ({ handleOnClickForOpenClose, 
                         <Suspense>
                             {
                                 images.length > 1 &&
-                                    <ImageCountByCircle {...{ setImageByIndex, actualImageIndex }} imageCount={images.length} />
+                                <ImageCountByCircle {...{ setImageByIndex, actualImageIndex }} imageCount={images.length} />
                             }
                         </Suspense>
                     </header>
