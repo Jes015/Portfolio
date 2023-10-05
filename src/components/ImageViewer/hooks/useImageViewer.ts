@@ -1,5 +1,5 @@
 import type { TImageArray } from "@src/models"
-import { useEffect, useState } from "react"
+import { useState } from "react"
 
 interface IParams {
     images: TImageArray
@@ -7,12 +7,6 @@ interface IParams {
 
 export const useImageViewer = ({ images }: IParams) => {
     const [actualImageIndex, setActualImageIndex] = useState(0)
-
-    useEffect(() => {
-        const $imageElement = document.getElementById(String(actualImageIndex))
-
-        $imageElement?.scrollIntoView({ behavior: 'instant' })
-    }, [actualImageIndex])
 
     const nextImage = () => {
         const isTheLastImage = actualImageIndex === images.length - 1

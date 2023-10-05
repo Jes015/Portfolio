@@ -5,11 +5,11 @@ interface IProps {
     src: string
     srcPlaceHolder: string
     alt: string
-    id?: string
     className?: string
+    styleContainer?: React.CSSProperties
 }
 
-export const CustomImage: React.FC<IProps> = ({ src, srcPlaceHolder, className, id }) => {
+export const CustomImage: React.FC<IProps> = ({ src, srcPlaceHolder, className, styleContainer }) => {
     const [showPlaceholder, setShowPlaceholder] = useState(true)
     const placeHolderImageRef = useRef<HTMLImageElement>()
     const ImageRef = useRef<HTMLImageElement>()
@@ -44,7 +44,7 @@ export const CustomImage: React.FC<IProps> = ({ src, srcPlaceHolder, className, 
 
     return (
         <div
-            {...{ id }}
+            style={styleContainer}
             className={
                 [
                     className ?? styles.image__container,
