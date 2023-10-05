@@ -5,7 +5,7 @@ export const CProjects: IProject[] = [
     {
         title: "CulinaryAlchemy",
         description: "Online platform that aims to revolutionize the way people discover, share, and explore recipes.",
-        imageUrls: getImagesPathByName("culinary-alchemy", 11),
+        imageUrls: getImagesPathByName("culinary-alchemy", 14),
         techs: [
             CTechs.React,
             CTechs.Astro,
@@ -62,7 +62,7 @@ export const CProjects: IProject[] = [
     {
         title: "dev vault",
         description: "List of tools for web developers.",
-        imageUrls: getImagesPathByName("dev-vault", 1),
+        imageUrls: getImagesPathByName("dev-vault", 3),
         techs: [CTechs.Typescript, CTechs.Nextjs, CTechs.AutoAnimate, CTechs.jsonBin],
         githubURL: "https://github.com/Jes015/Dev-Vault/",
         demoURL: "https://dev-vault-ochre.vercel.app/",
