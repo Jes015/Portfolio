@@ -17,6 +17,7 @@ interface IProps {
 export const ImageViewerModal: React.FC<IProps> = ({ handleOnClickForOpenClose, images, projectTitle }) => {
     const { nextImage, previousImage, actualImageIndex, setImageByIndex } = useImageViewer({ images })
 
+    console.log(actualImageIndex)
     const handleOnClick = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
         event.stopPropagation()
     }
@@ -52,7 +53,9 @@ export const ImageViewerModal: React.FC<IProps> = ({ handleOnClickForOpenClose, 
                                 images.map((imageData, index) => (
                                     <CustomImage
                                         key={index}
-                                        id={String(index)}
+                                        styleContainer={{
+                                            translate: `${-100 * actualImageIndex}%`
+                                        }}
                                         src={imageData.normal}
                                         srcPlaceHolder={imageData.resized}
                                         alt='project image'
