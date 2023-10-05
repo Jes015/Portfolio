@@ -17,7 +17,6 @@ interface IProps {
 export const ImageViewerModal: React.FC<IProps> = ({ handleOnClickForOpenClose, images, projectTitle }) => {
     const { nextImage, previousImage, actualImageIndex, setImageByIndex } = useImageViewer({ images })
 
-    console.log(actualImageIndex)
     const handleOnClick = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
         event.stopPropagation()
     }

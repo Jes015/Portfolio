@@ -5,7 +5,7 @@ export const CProjects: IProject[] = [
     {
         title: "CulinaryAlchemy",
         description: "Online platform that aims to revolutionize the way people discover, share, and explore recipes.",
-        imageUrls: getImagesPathByName("culinary-alchemy", 14),
+        imageUrls: getImagesPathByName("culinary-alchemy"),
         techs: [
             CTechs.React,
             CTechs.Astro,
@@ -25,7 +25,7 @@ export const CProjects: IProject[] = [
     {
         title: 'Blog',
         description: 'My blog: web dev tips, productivity, and valuable skills.',
-        imageUrls: getImagesPathByName("blog", 2),
+        imageUrls: getImagesPathByName("blog"),
         techs: [
             CTechs.Astro,
             CTechs.React,
@@ -39,7 +39,7 @@ export const CProjects: IProject[] = [
     {
         title: "nexus catalyst",
         description: "Dashboard for web developers to optimize and manage their time.",
-        imageUrls: getImagesPathByName("nexus-catalyst", 3),
+        imageUrls: getImagesPathByName("nexus-catalyst"),
         techs: [
             CTechs.Typescript,
             CTechs.React,
@@ -54,7 +54,7 @@ export const CProjects: IProject[] = [
     {
         title: "time manager",
         description: "App for optimize and manage your time.",
-        imageUrls: getImagesPathByName("time-manager", 4), 
+        imageUrls: getImagesPathByName("time-manager"), 
         techs: [CTechs.JavaScript, CTechs.ReactRouterDom, CTechs.React],
         githubURL: "https://github.com/Jes015/Time-Manager",
         demoURL: "https://time-manager-zeta.vercel.app/",
@@ -62,7 +62,7 @@ export const CProjects: IProject[] = [
     {
         title: "dev vault",
         description: "List of tools for web developers.",
-        imageUrls: getImagesPathByName("dev-vault", 3),
+        imageUrls: getImagesPathByName("dev-vault"),
         techs: [CTechs.Typescript, CTechs.Nextjs, CTechs.AutoAnimate, CTechs.jsonBin],
         githubURL: "https://github.com/Jes015/Dev-Vault/",
         demoURL: "https://dev-vault-ochre.vercel.app/",
