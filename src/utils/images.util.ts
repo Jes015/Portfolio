@@ -2,7 +2,6 @@ import type { IImage, TImageArray } from "@src/models"
 
 const getMaxImagesByProjectName = (projectName: string) => {
     const files = Object.keys(import.meta.glob('../../public/*'))
-    console.log(files)
     const filesFiltered = files.filter((project) => project.includes(projectName))
     const filesCount = filesFiltered.length / 2 // <-- this /2 is because of the resized images
 
