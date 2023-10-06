@@ -10,6 +10,7 @@ interface IProps {
 }
 
 export const ImageViewer: React.FC<IProps> = ({ images, projectTitle }) => {
+    console.log('re-render')
     const [isOpen, setIsOpen] = useState(false)
 
     const handleOnClickForOpenClose = () => {

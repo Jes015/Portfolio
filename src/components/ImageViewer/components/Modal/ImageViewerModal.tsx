@@ -24,7 +24,7 @@ export const ImageViewerModal: React.FC<IProps> = ({ handleOnClickForOpenClose, 
     return createPortal(
         <div className={styles.imageViewer__modal} onClick={handleOnClickForOpenClose}>
             <div onClick={handleOnClick} className={styles.imageViewer}>
-                <div 
+                <div
                     className={styles['imageViewer__close-button-container']}
                     onClick={handleOnClickForOpenClose}
                 >
@@ -45,12 +45,6 @@ export const ImageViewerModal: React.FC<IProps> = ({ handleOnClickForOpenClose, 
                 <div>
                     <header className={styles.imageViewer__header}>
                         <span className={styles.imageViewer__title} >{projectTitle} images</span>
-                        <Suspense>
-                            {
-                                images.length > 1 &&
-                                <ImageCountByCircle {...{ setImageByIndex, actualImageIndex }} imageCount={images.length} />
-                            }
-                        </Suspense>
                     </header>
                     <main>
                         <div className={styles['imageViewer__images-container']}>
@@ -68,6 +62,14 @@ export const ImageViewerModal: React.FC<IProps> = ({ handleOnClickForOpenClose, 
                                     />
                                 ))
                             }
+                            <Suspense>
+                                <div className={styles['imagePreview__counter-container']}>
+                                    {
+                                        images.length > 1 &&
+                                        <ImageCountByCircle {...{ setImageByIndex, actualImageIndex }} imageCount={images.length} />
+                                    }
+                                </div>
+                            </Suspense>
                         </div>
                     </main>
                     <footer></footer>
