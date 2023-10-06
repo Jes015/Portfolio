@@ -1,0 +1,41 @@
+.keyListener__container {
+    position: absolute;
+    bottom: 0;
+    left: auto;
+    right: auto;
+    display: flex;
+    gap: 0.3em;
+    align-items: center;
+    padding: 0.5em;
+}
+
+.keyListener {
+    font-size: 0.98em;
+    display: inline-flex;
+    gap: 0.2em;
+}
+
+.keyListener__key {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(-225deg, #2b2d2f, #151515);
+    box-shadow: rgb(13, 13, 17) 0px -2px 0px 0px inset, rgb(0, 0, 0) 0px 0px 1px 1px inset, rgba(0, 0, 0, 0.4) 0px 1px 2px 1px;
+    font-size: 1em;
+    padding-inline: 0.3em;
+    font-size: 0.7em;
+    font-weight: 900;
+    padding-block: 0.5em 0.1em;
+    cursor: default;
+}
+
+.keyListener__auxiliar-key {
+    padding-block: 0.3em 0.1em;
+    font-size: 0.7em;
+    font-weight: 900;
+}
+
+.keyListener__key--pressed {
+    background: linear-gradient(-225deg, #4b4d4f, #252525);
+}
+.keyListener__key--succes {}
