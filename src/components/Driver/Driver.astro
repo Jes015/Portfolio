@@ -3,7 +3,7 @@ import { IconInfoCircle } from "@components/Icons";
 ---
 
 <div class="driver" id="driver">
-    <IconInfoCircle />
+    <IconInfoCircle className="driver__icon" />
 </div>
 
 <style>
@@ -12,6 +12,31 @@ import { IconInfoCircle } from "@components/Icons";
         top: -1.5em;
         right: 0;
         cursor: pointer;
+    }
+
+    .driver__icon {
+        animation: driver__icon-animation 2.5s linear both infinite;
+        animation-timing-function: steps(4, 4);
+    }
+    @keyframes driver__icon-animation {
+        0% {
+            transform: translateY(0);
+        }
+        10% {
+            transform: translateY(-1px);
+        }
+        20% {
+            transform: translateY(-1px);
+        }
+        30% {
+            transform: translateY(1px);
+        }
+        40% {
+            transform: translateY(1px);
+        }
+        50% {
+            transform: translateY(0);
+        }
     }
 
     @media (width <= 606px) {
