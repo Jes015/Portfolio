@@ -22,15 +22,15 @@
 
 .imageViewer__close-button-container {
     position: absolute;
-    right: -1.2em;
-    top: -1.2em;
+    right: -0.5em;
+    top: -0.5em;
 }
 
 .imageViewer__close-button {
     cursor: pointer;
     color: var(--primary-text-color);
-    width: 3em;
-    height: 3em;
+    width: 2.4em;
+    height: 2.4em;
 }
 
 .imageViewer__header {
@@ -68,7 +68,7 @@
 .imageViewer__images-container {
     position: relative;
     max-width: 60em;
-    width: 80vw;
+    width: 65vw;
     aspect-ratio: 16/9;
     display: flex;
     overflow: hidden;
@@ -89,4 +89,25 @@
 .imagePreview:hover {
     background-color: rgba(1, 1, 1, 0.3);
     opacity: 100%;
+}
+
+.imagePreview__counter-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 100;
+    padding-bottom: 0.5em;
+}
+
+.imagePreview__counter-container::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 200%;
+    z-index: -10;
+    background: linear-gradient(0deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%);
 }
