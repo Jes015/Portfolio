@@ -1,6 +1,8 @@
 ---
+import AnimatedBackground from "@components/AnimatedBackground.astro"
+import { BackgroundComponents } from "@components/BackgroundComponents"
+import { KeyListener } from "@components/KeyListener/KeyListener"
 import "@fontsource/roboto"
-import AnimatedBackground from "@src/components/AnimatedBackground.astro"
 import "@styles/global.css"
 import "@styles/normalize.css"
 
@@ -35,8 +37,11 @@ const title = "Jes015's portfolio";
         <title>{title}</title>
     </head>
     <body>
-        <AnimatedBackground />
+        <BackgroundComponents client:load>
+            <AnimatedBackground />
+        </BackgroundComponents>
         <div id="modalElement"></div>
         <slot />
+        <KeyListener client:media="(min-width: 600px)" />
     </body>
 </html>

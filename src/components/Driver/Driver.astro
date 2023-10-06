@@ -24,7 +24,7 @@ import { IconInfoCircle } from "@components/Icons";
     const driver = document.getElementById("driver");
 
     const handleOnClick = async () => {
-        const DriverManager = await import("@src/utils/globalDriver.util").then(
+        const DriverManager = await import("./utils/globalDriver.util").then(
             (module) => module.DriverManager,
         );
         const localSteps = await import("@src/data/driverjs.data").then(
