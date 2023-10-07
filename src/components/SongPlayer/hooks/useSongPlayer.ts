@@ -1,17 +1,21 @@
 import { CSongs } from "@data/songs.data"
+import { CVolumeStatus, type TVolumeStatus } from "@src/components/SongPlayer/models"
 import { useEffect, useRef, useState } from "react"
+import { getActualVolumeState } from "../utils"
 
 const defaultValues = {
     isPlaying: false,
     currentTime: CSongs[0].startAt,
     currentSongIndex: 0,
-    songs: CSongs
+    songs: CSongs,
+    volumeState: CVolumeStatus.high
 }
 
 export const useSongPlayer = () => {
     const [isPlaying, setIsPlaying] = useState(defaultValues.isPlaying)
     const [currentSongIndex, setCurrentSongIndex] = useState(defaultValues.currentSongIndex)
     const [currentTime, setCurrentTime] = useState(defaultValues.currentTime)
+    const [volumeState, setVolumeState] = useState<TVolumeStatus>(defaultValues.volumeState) // For icons
     const audio: React.MutableRefObject<HTMLAudioElement | null> = useRef(null)
 
     useEffect(() => {
@@ -100,12 +104,29 @@ export const useSongPlayer = () => {
         })
     }
 
+    const toggleMuteVolume = () => {
+        if (audio.current == null) return
+        audio.current.muted = !audio.current?.muted
+        updateVolumeStatus()
+    }
+
+    const setNewVolume = (volume: number) => {
+        if (audio.current == null) return
+        audio.current.volume = volume
+        updateVolumeStatus()
+    }
+
+    const updateVolumeStatus = () => {
+        if (audio.current == null) return
+        const newState = getActualVolumeState(audio.current.volume, volumeState)
+        setVolumeState(newState)
+    }
+
     const getCurrentSongData = () => {
         if (audio.current == null) return
 
         const audioData = {
-            duration: audio.current.duration,
-            startAt: defaultValues.songs[currentSongIndex]
+            duration: audio.current.duration
         }
 
         return audioData
@@ -125,7 +146,10 @@ export const useSongPlayer = () => {
         previousSong,
         setActualSong,
         songs: filteredSongs,
-        currentSong
+        currentSong,
+        toggleMuteVolume,
+        setNewVolume,
+        volumeState
     }
 
 }

@@ -1,0 +1,10 @@
+.volumeControl {
+    display: flex;
+    align-items: center;
+    gap: 0.3em;
+}
+
+.volumeControl__icon {
+    margin-top: 0.31em;
+    color: var(--primary-text-color);
+}

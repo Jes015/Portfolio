@@ -15,7 +15,10 @@ export const SongPlayer = () => {
         songs,
         setActualSong,
         nextSong,
-        previousSong
+        previousSong,
+        setNewVolume,
+        toggleMuteVolume,
+        volumeState: actualVolumeStatus,
     } = useSongPlayer()
 
     const [isMinimized, setIsMinimized] = useState(false)
@@ -59,7 +62,10 @@ export const SongPlayer = () => {
                         setNewCurrentTime,
                         getCurrentSongData,
                         nextSong,
-                        previousSong
+                        previousSong,
+                        setNewVolume,
+                        toggleMuteVolume,
+                        actualVolumeStatus
                     }}
                 />
                 <Queue {...{ songs, setActualSong }} />
