@@ -25,7 +25,7 @@ export const Controls: React.FC<IProps> = ({ isPlaying, currentTime, toggleSongS
                     const currentTime = event.currentTarget.value
                     setNewCurrentTime(Number(currentTime))
                 }}
-                {...{ currentTime }}
+                currentTime={currentTime}
             />
             <ControlButtons {...{ toggleSongStatus, isPlaying, nextSong, previousSong }} />
         </section>

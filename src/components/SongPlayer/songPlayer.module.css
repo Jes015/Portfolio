@@ -13,7 +13,33 @@
     max-width: 20em;
     width: 100%;
     overflow: hidden;
-    animation: songPlayer 2s ease forwards;
+}
+
+.songPlayer--minimized {
+    animation: minimize-songPlayer 2s ease forwards;
+}
+
+.songPlayer--display {
+    animation: un-minimize-songPlayer 2s ease forwards;
+}
+
+.songPlayer__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+}
+
+.songPlayer__icon-minimize-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.songPlayer__icon-minimize {
+    width: 1em;
+    height: 1em;
+    color: var(--primary-text-color);
 }
 
 .songPlayer__title {
@@ -38,12 +64,22 @@
     background-color: rgba(0, 0, 0, 0.253);
 }
 
-@keyframes songPlayer {
+@keyframes un-minimize-songPlayer {
     from {
-        translate: 0em 30em;
+        translate: 0em 25em;
     }
 
     to {
         translate: 0em 0em;
+    }
+}
+
+@keyframes minimize-songPlayer {
+    from {
+        translate: 0em 0em;
+    }
+
+    to {
+        translate: 0em 25em;
     }
 }

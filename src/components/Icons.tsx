@@ -547,3 +547,33 @@ export const IconPauseCircle: TIcon = (props) => {
     </svg>
   );
 }
+
+// icon:window-minimize | Material Design Icons https://materialdesignicons.com/ | Austin Andrews
+export const IconWindowMinimize: TIcon = (props) => {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      height="1em"
+      width="1em"
+      {...props}
+    >
+      <path d="M20 14H4v-4h16" />
+    </svg>
+  );
+}
+
+// icon:bxs-chevron-up | Boxicons https://boxicons.com/ | Atisa
+export const IconBxsChevronUp: TIcon = (props) => {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      height="1em"
+      width="1em"
+      {...props}
+    >
+      <path d="M12 6.879l-7.061 7.06 2.122 2.122L12 11.121l4.939 4.94 2.122-2.122z" />
+    </svg>
+  );
+}

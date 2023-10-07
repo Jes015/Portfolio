@@ -10,6 +10,7 @@ interface IProps {
 }
 
 export const Song: React.FC<IProps> = ({ song, selected = false, setThisSong }) => {
+
     return (
         <div className={styles.song}>
             <section className={
