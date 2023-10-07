@@ -1,7 +1,6 @@
 ---
-import AnimatedBackground from "@components/AnimatedBackground.astro"
 import "@fontsource/roboto"
-import { KeyListener, OnTypeComponents, SongPlayer } from "@src/components"
+import { AnimatedBackground, KeyListener, OnTypeComponents, SongPlayer } from "@src/components"
 import "@styles/global.css"
 import "@styles/normalize.css"
 
@@ -37,7 +36,7 @@ const title = "Jes015's portfolio";
     </head>
     <body>
         <OnTypeComponents client:load>
-            <AnimatedBackground />
+            <AnimatedBackground client:only="react" />
             <SongPlayer client:only="react" />
         </OnTypeComponents>
         <div id="modalElement"></div>
