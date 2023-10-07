@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react"
 
 const defaultValues = {
     isPlaying: false,
-    currentTime: 0,
+    currentTime: CSongs[0].startAt,
     currentSongIndex: 0,
     songs: CSongs
 }
@@ -15,11 +15,14 @@ export const useSongPlayer = () => {
     const audio: React.MutableRefObject<HTMLAudioElement | null> = useRef(null)
 
     useEffect(() => {
+
         if (audio.current == null) return
+
         const selectedSong = defaultValues.songs[currentSongIndex]
+        setCurrentTime(selectedSong.startAt)
+
         audio.current.src = selectedSong.audio
         audio.current.currentTime = selectedSong.startAt
-        setCurrentTime(selectedSong.startAt)
 
         if (!isPlaying) {
             setIsPlaying(true)
@@ -62,7 +65,7 @@ export const useSongPlayer = () => {
         const isTheLastSong = currentSongIndex === defaultValues.songs.length - 1
         if (isTheLastSong) {
             setCurrentSongIndex(0)
-        }else {
+        } else {
             setCurrentSongIndex(currentSongIndex + 1)
         }
         setNewCurrentTime(0)
@@ -101,13 +104,16 @@ export const useSongPlayer = () => {
         if (audio.current == null) return
 
         const audioData = {
-            duration: audio.current.duration
+            duration: audio.current.duration,
+            startAt: defaultValues.songs[currentSongIndex]
         }
 
         return audioData
     }
 
     const filteredSongs = defaultValues.songs.filter((_, actualSongIndex) => actualSongIndex !== currentSongIndex)
+
+    const currentSong = defaultValues.songs[currentSongIndex]
 
     return {
         currentTime,
@@ -119,7 +125,7 @@ export const useSongPlayer = () => {
         previousSong,
         setActualSong,
         songs: filteredSongs,
-        currentSong: defaultValues.songs[currentSongIndex]
+        currentSong
     }
 
 }

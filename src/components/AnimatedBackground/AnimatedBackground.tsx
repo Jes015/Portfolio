@@ -3,7 +3,6 @@ import { calculateStarsForTheScreen } from './utils'
 
 export const AnimatedBackground = () => {
     const starsCount = calculateStarsForTheScreen()
-    console.log(starsCount)
 
     return (
         <div className={styles["animatedBackground__container"]}>
