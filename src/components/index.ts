@@ -1,3 +1,4 @@
+export * from './AnimatedBackground/AnimatedBackground'
 export * from './BackgroundComponents'
 export * from './CustomImage'
 export * from './Icons'
