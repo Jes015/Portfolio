@@ -1,0 +1,7 @@
+.controls {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3em;
+    padding-block: 0.5em;
+    border-bottom: 0.1em solid var(--primary-border-color);
+}

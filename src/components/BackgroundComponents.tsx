@@ -5,8 +5,8 @@ interface IProps {
     children: React.ReactNode
 }
 
-export const BackgroundComponents: React.FC<IProps> = ({ children }) => {
-    const [showBackground, setShowBackground] = useState(false)
+export const OnTypeComponents: React.FC<IProps> = ({ children }) => {
+    const [showBackground, setShowBackground] = useState(true)
 
     useEffect(() => {
         const onMessage = () => {

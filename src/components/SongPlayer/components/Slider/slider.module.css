@@ -1,0 +1,16 @@
+.slider {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.slider__element {
+    flex-grow: 1;
+}
+
+.slider__side-values {
+    color: var(--primary-text-color);
+    padding-top: 0.15em;
+    line-height: 0.7em;
+    font-size: 0.7em;
+}
