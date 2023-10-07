@@ -1,0 +1,27 @@
+.controlButtons {
+    display: flex;
+    gap: 0.3em;
+    align-items: center;
+    justify-content: center;
+}
+
+.controlButtons__button {
+    color: var(--primary-text-color);
+    cursor: pointer;
+
+}
+
+.controlButtons__button--side {
+    width: 1.3em;
+    height: 1.3em;
+    opacity: 0.5;
+}
+
+.controlButtons__button--main {
+    width: 2.4em;
+    height: 2.4em;
+}
+
+.controlButtons__button--side:hover {
+    opacity: 1;
+}

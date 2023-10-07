@@ -29,12 +29,15 @@
             rgba(26, 40, 75, 1) 0%,
             rgba(25, 33, 52, 0.5) 100%,
             rgba(26, 40, 75, 1) 100%);
-            
+
     --primary-textCard-font: 0.9em;
     --secondary--textCard-font: 0.8em;
+    --ternary--textCard-font: 0.7em;
     --sb-track-color: #111a30;
     --sb-thumb-color: #2dd4bf1a;
     --sb-size: 0.2em;
+
+    --second-slider-background-color: #94a3b88a;
 }
 
 *,
@@ -54,6 +57,57 @@ a {
     color: var(--terceary-text-color);
     font-size: 0.84em;
 }
+
+input[type="range"] {
+    /* removing default appearance */
+    -webkit-appearance: none;
+    appearance: none;
+    /* creating a custom design */
+    width: 100%;
+    cursor: pointer;
+    outline: none;
+    /*  slider progress trick  */
+    overflow: hidden;
+    border-radius: 16px;
+    background: #94a3b800;
+}
+
+/* Track: webkit browsers */
+input[type="range"]::-webkit-slider-runnable-track {
+    height: 0.3em;
+    background-color: var(--second-slider-background-color);
+    border-radius: 1em;
+}
+
+/* Track: Mozilla Firefox */
+input[type="range"]::-moz-range-track {
+    height: 0.3em;
+    background-color: var(--second-slider-background-color);
+    border-radius: 1em;
+}
+
+/* Thumb: webkit */
+input[type="range"]::-webkit-slider-thumb {
+    /* removing default appearance */
+    -webkit-appearance: none;
+    appearance: none; 
+    /* creating a custom design */
+    height: 15px;
+    width: 0.05em;
+    background-color: var(--primary-text-color);
+    /*  slider progress trick  */
+    box-shadow: -400px 0 0 400px var(--primary-text-color);
+  }
+  
+  
+  /* Thumb: Firefox */
+  input[type="range"]::-moz-range-thumb {
+    height: 15px;
+    width: 0.05em;
+    background-color: var(--primary-text-color);
+    /*  slider progress trick  */
+    box-shadow: -400px 0 0 400px var(--primary-text-color);
+  }
 
 .scroll {
     scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
