@@ -13,6 +13,7 @@
     max-width: 20em;
     width: 100%;
     overflow: hidden;
+    animation: songPlayer 2s ease forwards;
 }
 
 .songPlayer__title {
@@ -35,4 +36,14 @@
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.253);
+}
+
+@keyframes songPlayer {
+    from {
+        translate: 0em 30em;
+    }
+
+    to {
+        translate: 0em 0em;
+    }
 }
