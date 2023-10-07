@@ -3,11 +3,13 @@ import styles from './slider.module.css'
 interface IProps {
     min: number
     max: number
-    currentTime: number
+    step?: number
+    currentValue?: number
+    defaultValue?: number
     sideValues?: string[]
     onChange: (event: React.ChangeEvent<HTMLInputElement>) => void
 }
-export const Slider: React.FC<IProps> = ({ max, min, sideValues, onChange, currentTime }) => {
+export const Slider: React.FC<IProps> = ({ max, min, step, sideValues, onChange, currentValue, defaultValue }) => {
 
     return (
         <div className={styles.slider}>
@@ -15,9 +17,9 @@ export const Slider: React.FC<IProps> = ({ max, min, sideValues, onChange, curre
             <input
                 onChange={onChange}
                 className={styles.slider__element}
-                value={currentTime}
+                value={currentValue}
                 type="range"
-                {...{ max, min }}
+                {...{ max, min, step, defaultValue }}
             />
             {sideValues != null && <span className={styles['slider__side-values']}>{sideValues[1]}</span>}
         </div>

@@ -5,3 +5,10 @@
     padding-block: 0.5em;
     border-bottom: 0.1em solid var(--primary-border-color);
 }
+
+.controls__second-box {
+    margin-top: 0.4em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

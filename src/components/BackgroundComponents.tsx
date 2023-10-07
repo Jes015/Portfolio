@@ -6,7 +6,7 @@ interface IProps {
 }
 
 export const OnTypeComponents: React.FC<IProps> = ({ children }) => {
-    const [showBackground, setShowBackground] = useState(false)
+    const [showBackground, setShowBackground] = useState(true)
 
     useEffect(() => {
         const onMessage = () => {
