@@ -12,7 +12,7 @@
 
 .animatedBackground__wrapper {
     white-space: nowrap;
-    transform: translateX(-45vh) translateY(-40vw);
+    transform: translateX(-45vh) translateY(-60vw);
     rotate: 310deg;
 }
 
@@ -29,6 +29,7 @@
             rgb(100, 116, 139),
             rgba(0, 0, 0, 0));
     filter: drop-shadow(0px 3px 0.5px white);
+    scale: var(--scale);
 }
 
 .animatedBackground__star {
