@@ -25,10 +25,10 @@ export const KeyListener = () => {
                     setTypedKeys('')
                 }, 800)
 
-                const actualKeyIndex = keysToListen.findIndex((key) => key === keyPressed)
-                const shouldActualTypedKeyBeRender = keysToListen[actualKeyIndex] === lastKeysArray[actualKeyIndex]
+                const actualKeyIndex = keysToListen.findIndex((key) => key?.toLocaleLowerCase() === keyPressed?.toLocaleLowerCase())
+                const shouldActualTypedKeyBeRender = keysToListen[actualKeyIndex]?.toLocaleLowerCase() === lastKeysArray[actualKeyIndex]?.toLocaleLowerCase()
 
-                if (shouldActualTypedKeyBeRender || prevKey === keyPressed || lastKeys.length === keysToListen.length) return lastKeys
+                if (shouldActualTypedKeyBeRender || prevKey?.toLocaleLowerCase() === keyPressed?.toLocaleLowerCase() || lastKeys.length === keysToListen.length) return lastKeys
 
                 return lastKeys + keyPressed
             })
@@ -43,7 +43,7 @@ export const KeyListener = () => {
     }, [])
 
     useEffect(() => {
-        if (typedKeys === wordToListen) {
+        if (typedKeys?.toLocaleLowerCase() === wordToListen?.toLocaleLowerCase()) {
             showBackgroundService.sendMessage()
         }
     }, [typedKeys])
@@ -58,7 +58,7 @@ export const KeyListener = () => {
                             key={key}
                             className={[
                                 styles.keyListener__key,
-                                typedKeys[index] === key && styles['keyListener__key--pressed']
+                                typedKeys[index]?.toLocaleLowerCase() === key?.toLocaleLowerCase() && styles['keyListener__key--pressed']
                             ].join(' ')}
                         >
                             {key}
