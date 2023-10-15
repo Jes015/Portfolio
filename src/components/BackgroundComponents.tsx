@@ -1,11 +1,8 @@
+import { AnimatedBackground, SongPlayer } from "@src/components"
 import { showBackgroundService } from "@src/services"
 import { useEffect, useState } from "react"
 
-interface IProps {
-    children: React.ReactNode
-}
-
-export const OnTypeComponents: React.FC<IProps> = ({ children }) => {
+export const OnTypeComponents = () => {
     const [showBackground, setShowBackground] = useState(false)
 
     useEffect(() => {
@@ -18,6 +15,10 @@ export const OnTypeComponents: React.FC<IProps> = ({ children }) => {
     }, [])
 
     return (
-        showBackground && children
+        showBackground &&
+        <>
+            <AnimatedBackground />
+            <SongPlayer />
+        </>
     )
 }

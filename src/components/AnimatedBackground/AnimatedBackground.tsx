@@ -32,7 +32,6 @@ export const AnimatedBackground = () => {
                                     scale = Math.floor(Math.random() * 10 + 1)
                                 }
 
-                                console.log(scale)
                                 return (
                                     <span
                                         name='elemenr'
