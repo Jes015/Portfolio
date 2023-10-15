@@ -45,6 +45,10 @@
     opacity: 100%;
 }
 
+.animatedBackground__star-container--tiny {
+    filter: drop-shadow(0px 3px 1px white);
+}
+
 @keyframes startMovement {
     from {}
 

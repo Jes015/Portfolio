@@ -24,10 +24,16 @@ export const AnimatedBackground = () => {
                                 const animationDelay = Math.random() * 80 + 1
                                 const animationTime = Math.random() * 20 + 5
                                 let scale = 1
+                                const classesContainer = [styles["animatedBackground__star-container"]]
 
                                 if (frameIndex === 0) {
                                     scale = Math.random() + 0.4
+                                    
+                                    if (scale < 0.6) {
+                                        classesContainer.push(styles['animatedBackground__star-container--tiny'])
+                                    }
                                 }
+
                                 if (frameIndex === 1) {
                                     scale = Math.floor(Math.random() * 10 + 1)
                                 }
@@ -42,7 +48,7 @@ export const AnimatedBackground = () => {
                                             "--animation-time": animationTime + "s",
                                             '--scale': scale
                                         }}
-                                        className={styles["animatedBackground__star-container"]}
+                                        className={classesContainer.join(' ')}
                                     >
                                         <div className={styles["animatedBackground__star"]} />
                                     </span>
