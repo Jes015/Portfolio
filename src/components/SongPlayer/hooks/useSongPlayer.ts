@@ -52,7 +52,9 @@ export const useSongPlayer = () => {
 
         return () => {
             if (audio.current == null) return
+            audio.current.pause()
             audio.current.removeEventListener('timeupdate', handleOnTimeUpdate)
+            audio.current = null
         }
     }, [])
 

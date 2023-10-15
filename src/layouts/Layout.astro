@@ -1,6 +1,6 @@
 ---
 import "@fontsource/roboto"
-import { AnimatedBackground, KeyListener, OnTypeComponents, SongPlayer } from "@src/components"
+import { KeyListener, OnTypeComponents } from "@src/components"
 import "@styles/global.css"
 import "@styles/normalize.css"
 
@@ -35,10 +35,7 @@ const title = "Jes015's portfolio";
         <title>{title}</title>
     </head>
     <body>
-        <OnTypeComponents client:load>
-            <AnimatedBackground client:only="react" />
-            <SongPlayer client:load />
-        </OnTypeComponents>
+        <OnTypeComponents client:load />
         <div id="modalElement"></div>
         <slot />
         <KeyListener client:media="(min-width: 600px)" />
