@@ -64,6 +64,7 @@
     background-color: rgba(0, 0, 0, 0.253);
 }
 
+
 @keyframes un-minimize-songPlayer {
     from {
         translate: 0em 25.4em;

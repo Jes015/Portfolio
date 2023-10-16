@@ -19,6 +19,7 @@ export const SongPlayer = () => {
         setNewVolume,
         toggleMuteVolume,
         volumeState: actualVolumeStatus,
+        isLoading
     } = useSongPlayer()
 
     const [isMinimized, setIsMinimized] = useState(false)
@@ -52,8 +53,10 @@ export const SongPlayer = () => {
                     }
                 </div>
             </header>
-            <main>
-                <Song song={currentSong} selected />
+            <div>
+                <div className={styles['songPlayer__actual-sound-container']}>
+                    <Song song={currentSong} selected  {...{ isLoading }} />
+                </div>
                 <Controls
                     {...{
                         isPlaying,
@@ -69,7 +72,7 @@ export const SongPlayer = () => {
                     }}
                 />
                 <Queue {...{ songs, setActualSong }} />
-            </main>
+            </div>
         </div>
     )
 }
