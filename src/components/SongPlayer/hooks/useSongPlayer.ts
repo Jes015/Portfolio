@@ -17,10 +17,12 @@ export const useSongPlayer = () => {
     const [currentTime, setCurrentTime] = useState(defaultValues.currentTime)
     const [volumeState, setVolumeState] = useState<TVolumeStatus>(defaultValues.volumeState) // For icons
     const audio: React.MutableRefObject<HTMLAudioElement | null> = useRef(null)
+    const [isLoading, setIsLoading] = useState(false)
 
     useEffect(() => {
 
         if (audio.current == null) return
+        setIsLoading(true)
 
         const selectedSong = defaultValues.songs[currentSongIndex]
         setCurrentTime(selectedSong.startAt)
@@ -28,11 +30,29 @@ export const useSongPlayer = () => {
         audio.current.src = selectedSong.audio
         audio.current.currentTime = selectedSong.startAt
 
+        const handleOnLoadStart = () => {
+            setIsLoading(true)
+        }
+
+        const handleOnLoadData = () => {
+            setIsLoading(false)
+        }
+
+        audio.current.addEventListener('loadstart', handleOnLoadStart)
+        audio.current.addEventListener('canplay', handleOnLoadData)
+
         if (!isPlaying) {
             setIsPlaying(true)
         }
 
         audio.current.play()
+
+        return () => {
+            if (audio.current == null) return
+
+            audio.current.removeEventListener('loadstart', handleOnLoadStart)
+            audio.current.removeEventListener('canplay', handleOnLoadData)
+        }
     }, [currentSongIndex])
 
     useEffect(() => {
@@ -151,7 +171,8 @@ export const useSongPlayer = () => {
         currentSong,
         toggleMuteVolume,
         setNewVolume,
-        volumeState
+        volumeState,
+        isLoading
     }
 
 }
