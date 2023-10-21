@@ -27,6 +27,7 @@
     align-items: center;
     color: var(--primary-text-color);
     text-transform: capitalize;
+    padding-inline: 1.7em;
 }
 
 .modal__title {
@@ -38,6 +39,8 @@
     background-color: transparent;
     border: none;
     outline: none;
+    margin: 0;
+    padding: 0;
 }
 
 .modal__close-button-icon {
