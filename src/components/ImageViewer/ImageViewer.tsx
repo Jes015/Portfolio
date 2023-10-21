@@ -1,8 +1,10 @@
 import { WatchImage } from '@components/Icons'
-import { ImageViewerModal } from '@components/ImageViewer/components/'
 import { type TImageArray } from "@src/models"
-import { useState } from 'react'
+import { Suspense, lazy, useState } from 'react'
 import styles from './imageViewer.module.css'
+
+const ImageViewerModal = lazy(() => import('@components/ImageViewer/components/Modal/ImageViewerModal'))
+const Modal = lazy(() => import('@src/components/Modal/Modal'))
 
 interface IProps {
     images: TImageArray
@@ -20,10 +22,14 @@ export const ImageViewer: React.FC<IProps> = ({ images, projectTitle }) => {
             <div className={styles.imagePreview} onClick={handleOnClickForOpenClose}>
                 <WatchImage className={styles.imagePreview__image} />
             </div>
-            {
-                isOpen &&
-                <ImageViewerModal {...{ handleOnClickForOpenClose, styles, images, projectTitle }} />
-            }
+            <Suspense>
+                {
+                    isOpen &&
+                    <Modal title={projectTitle} {...{ handleOnClickForOpenClose }}>
+                        <ImageViewerModal {...{ styles, images }} />
+                    </Modal>
+                }
+            </Suspense>
         </>
     )
 }
