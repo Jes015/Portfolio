@@ -10,37 +10,42 @@ const skillAnimation = {
 
 ---
 
-<section id={CRoutes.Skills} class="skills">
-    {
-        CSkills.map((skill) => {
-                skillAnimation.animationTime += 0.2;
+<section id={CRoutes.Skills}>
+    <div class="skills__container scroll">
+        {
+            CSkills.map((skill) => {
+                    skillAnimation.animationTime += 0.2;
 
-                const shouldRestTheOpacity = skillAnimation.opacity >= 0.3;
+                    const shouldRestTheOpacity = skillAnimation.opacity >= 0.3;
 
-                if (shouldRestTheOpacity) {
-                    skillAnimation.opacity -= 0.045;
-                }
+                    if (shouldRestTheOpacity) {
+                        skillAnimation.opacity -= 0.045;
+                    }
 
-                return (
-                    <Skill
-                        skillData={skill}
-                        style={{
-                            "--animation-delay": `${skillAnimation.animationTime}s`,
-                            "--opacity": skillAnimation.opacity,
-                        }}
-                    />
-                );
-            })
-    }
+                    return (
+                        <Skill
+                            skillData={skill}
+                            style={{
+                                "--animation-delay": `${skillAnimation.animationTime}s`,
+                                "--opacity": skillAnimation.opacity,
+                            }}
+                        />
+                    );
+                })
+        }
+    </div>
 </section>
 
 <style is:global>
-    .skills {
+    .skills__container {
+        height: 100%;
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(13em, 1fr));
+        grid-auto-rows: 5em;
+        overflow-y: scroll;
     }
 
-    .skills > * {
+    .skills__container > * {
         animation: skillAnimation 2s infinite;
         background: var(--quaternary-card-background);
         animation-delay: var(--animation-delay);
