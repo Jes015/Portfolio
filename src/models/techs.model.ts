@@ -1,4 +1,4 @@
-import { IconAstro, IconAxios, IconBell, IconBxlFirebase, IconCodeJson, IconConsoleLine, IconDiamond, IconI18next, IconJS, IconMillion, IconMui, IconNextjs, IconPlaywright, IconReact, IconReacthookform, IconReactrouter, IconSWR, IconShipWheel, IconTypescript } from "@src/components/Icons"
+import { IconAstro, IconAxios, IconBell, IconBxlFirebase, IconCodeJson, IconConsoleLine, IconDiamond, IconI18next, IconJS, IconMui, IconNextjs, IconPlaywright, IconReact, IconReacthookform, IconReactrouter, IconSWR, IconShipWheel, IconSupabase, IconTypescript, IconWindow } from "@src/components/Icons"
 import type { TIcon } from "@src/models"
 
 export interface ITech {
@@ -8,9 +8,7 @@ export interface ITech {
 
 export type TTechsArray = ITech[]
 
-export type TTechRecord = Record<string, ITech>
-
-const CTechs: TTechRecord = {
+const CTechs = {
     Astro: {
         name: "astro",
         Icon: IconAstro
@@ -49,7 +47,7 @@ const CTechs: TTechRecord = {
     },
     million: {
         name: 'million',
-        Icon: IconMillion
+        Icon: IconReact
     },
     Nextjs: {
         name: "next.js",
@@ -85,12 +83,20 @@ const CTechs: TTechRecord = {
     },
     ReactWinbox : {
         name: 'react winbox',
-        Icon: IconReact
+        Icon: IconWindow
     },
     Driverjs: {
         name: 'Driver.js',
         Icon: IconShipWheel
+    },
+    Supabase: {
+        name: 'Supabase',
+        Icon: IconSupabase
+    },
+    Zustand: {
+        name: 'Zustand',
+        Icon: IconReact
     }
-}
+} as const
 
 export { CTechs }
