@@ -4,23 +4,40 @@ import { getImagesPathByName } from "@src/utils"
 export const CProjects: IProject[] = [
     {
         title: "CulinaryAlchemy",
-        description: "Online platform that aims to revolutionize the way people discover, share, and explore recipes.",
+        description: "Social media to share recipes.",
         imageUrls: getImagesPathByName("culinary-alchemy"),
         techs: [
             CTechs.React,
             CTechs.Astro,
             CTechs.playwright,
             CTechs.Typescript,
-            CTechs.axios, 
-            CTechs.Zod, 
+            CTechs.axios,
+            CTechs.Zod,
             CTechs.swr,
             CTechs.i18next,
             CTechs.million,
-            CTechs.joyUI, 
+            CTechs.joyUI,
             CTechs.ReactHookForm
         ],
         githubURL: "https://github.com/CulinaryAlchemy/CulinaryAlchemy",
         demoURL: "https://culinary-alchemy-web-app.vercel.app/",
+    },
+    {
+        title: "Spotify Clone",
+        description: "A spotify clone.",
+        imageUrls: getImagesPathByName("spotify-clone"),
+        techs: [
+            CTechs.Nextjs,
+            CTechs.Supabase,
+            CTechs.React,
+            CTechs.Zustand,
+            CTechs.Typescript,
+            CTechs.Zod,
+            CTechs.ReactHookForm,
+            CTechs.Sooner
+        ],
+        githubURL: "https://github.com/Jes015/Spotify-Clone",
+        demoURL: "https://spotify-clone-seven-ebon.vercel.app/",
     },
     {
         title: 'Blog',
@@ -54,7 +71,7 @@ export const CProjects: IProject[] = [
     {
         title: "time manager",
         description: "App for optimize and manage your time.",
-        imageUrls: getImagesPathByName("time-manager"), 
+        imageUrls: getImagesPathByName("time-manager"),
         techs: [CTechs.JavaScript, CTechs.ReactRouterDom, CTechs.React],
         githubURL: "https://github.com/Jes015/Time-Manager",
         demoURL: "https://time-manager-zeta.vercel.app/",

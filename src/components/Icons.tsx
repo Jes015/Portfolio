@@ -218,87 +218,6 @@ export const IconJS: TIcon = (props) => {
     )
 }
 
-export const IconMillion: TIcon = (props) => (
-    <svg
-        fill="none"
-        viewBox="0 0 566 119"
-        {...props}
-    >
-        <path
-            fill="url(#a)"
-            fillRule="evenodd"
-            d="M43.286 100.407c7.711-11.038 23.404-18.594 41.508-18.594 18.104 0 33.797 7.556 41.508 18.594C118.591 111.444 102.898 119 84.794 119c-18.104 0-33.797-7.556-41.508-18.593Z"
-            className={props.className}
-            clipRule="evenodd"
-        />
-        <path
-            fill="url(#b)"
-            d="M43.006 18.396C50.712 7.476 66.395 0 84.487 0c18.093 0 33.776 7.476 41.482 18.396-7.706 10.92-23.389 18.396-41.482 18.396-18.092 0-33.775-7.476-41.481-18.396Z"
-            className={props.className}
-        />
-        <path
-            fill="url(#c)"
-            d="M85.28 59.718C74.068 70.546 58.862 76.63 43.006 76.63c-15.856 0-31.062-6.084-42.274-16.912l42.274-41.322L85.28 59.718Z"
-            className={props.className}
-        />
-        <path
-            fill="url(#d)"
-            d="M168.344 59.738C157.132 70.567 141.925 76.65 126.07 76.65c-15.856 0-31.063-6.083-42.274-16.912l42.274-41.342 42.274 41.342Z"
-            className={props.className}
-        />
-        <defs className={props.className}>
-            <radialGradient
-                id="a"
-                cx={0}
-                cy={0}
-                r={1}
-                className={props.className}
-                gradientTransform="matrix(-.59712 11.99875 -26.7461 -1.33103 84.794 100.406)"
-                gradientUnits="userSpaceOnUse"
-            >
-                <stop className={props.className} stopColor="#845CE7" />
-                <stop className={props.className} offset={1} stopColor="#AF73D8" />
-            </radialGradient>
-            <radialGradient
-                id="b"
-                cx={0}
-                cy={0}
-                r={1}
-                className={props.className}
-                gradientTransform="matrix(-1.20562 24.73213 -54.00677 -2.63268 84.538 38.325)"
-                gradientUnits="userSpaceOnUse"
-            >
-                <stop className={props.className} stopColor="#845CE7" />
-                <stop className={props.className} offset={1} stopColor="#AF73D8" />
-            </radialGradient>
-            <radialGradient
-                id="c"
-                cx={0}
-                cy={0}
-                r={1}
-                className={props.className}
-                gradientTransform="matrix(-1.20562 24.73213 -54.00677 -2.63268 84.538 38.325)"
-                gradientUnits="userSpaceOnUse"
-            >
-                <stop className={props.className} stopColor="#845CE7" />
-                <stop className={props.className} offset={1} stopColor="#AF73D8" />
-            </radialGradient>
-            <radialGradient
-                id="d"
-                cx={0}
-                cy={0}
-                r={1}
-                className={props.className}
-                gradientTransform="matrix(-1.20562 24.73213 -54.00677 -2.63268 84.538 38.325)"
-                gradientUnits="userSpaceOnUse"
-            >
-                <stop className={props.className} stopColor="#845CE7" />
-                <stop className={props.className} offset={1} stopColor="#AF73D8" />
-            </radialGradient>
-        </defs>
-    </svg>
-)
-
 export const IconSWR: TIcon = (props) => (
     <svg
         height={12}
@@ -641,4 +560,35 @@ export const IconVolumeOff: TIcon = (props) => {
             <path d="M344 416a23.92 23.92 0 01-14.21-4.69c-.23-.16-.44-.33-.66-.51l-91.46-74.9H168a24 24 0 01-24-24V200.07a24 24 0 0124-24h69.65l91.46-74.9c.22-.18.43-.35.66-.51A24 24 0 01368 120v272a24 24 0 01-24 24z" />
         </svg>
     )
+}
+
+// icon:supabase | Simple Icons https://simpleicons.org | SimpleIcons.org
+export const IconSupabase: TIcon = (props) => {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      height="1em"
+      width="1em"
+      {...props}
+    >
+      <path d="M21.362 9.354H12V.396a.396.396 0 00-.716-.233L2.203 12.424l-.401.562a1.04 1.04 0 00.836 1.659H12v8.959a.396.396 0 00.716.233l9.081-12.261.401-.562a1.04 1.04 0 00-.836-1.66z" />
+    </svg>
+  );
+}
+
+// icon:window | Bootstrap https://icons.getbootstrap.com/ | Bootstrap
+export const IconWindow: TIcon = (props) => {
+  return (
+    <svg
+      fill="currentColor"
+      viewBox="0 0 16 16"
+      height="1em"
+      width="1em"
+      {...props}
+    >
+      <path d="M2.5 4a.5.5 0 100-1 .5.5 0 000 1zm2-.5a.5.5 0 11-1 0 .5.5 0 011 0zm1 .5a.5.5 0 100-1 .5.5 0 000 1z" />
+      <path d="M2 1a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V3a2 2 0 00-2-2H2zm13 2v2H1V3a1 1 0 011-1h12a1 1 0 011 1zM2 14a1 1 0 01-1-1V6h14v7a1 1 0 01-1 1H2z" />
+    </svg>
+  );
 }

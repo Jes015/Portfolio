@@ -21,7 +21,7 @@ const { style, skillData } = Astro.props;
                 </a>
             </div>
             <span class="skill__projects-count">
-                {skillData.projects.length} Projects</span
+                {skillData.projects.length} Project{skillData.projects.length > 1 && 's'}</span
             >
         </section>
     </header>
