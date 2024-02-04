@@ -3,6 +3,26 @@ import { getImagesPathByName } from "@src/utils"
 
 export const CProjects: IProject[] = [
     {
+        title: "Screen Capture",
+        description: "Record tabs and screen by the browser.",
+        imageUrls: getImagesPathByName("screen-recording"),
+        techs: [
+            CTechs.React,
+            CTechs.playwright,
+            CTechs.Zustand,
+            CTechs.Typescript,
+            CTechs.TailwindCss,
+            CTechs.Driverjs,
+            CTechs.Sooner,
+            CTechs.Husky,
+            CTechs.CommitLint,
+            CTechs.RadixUIPrimitives,
+            CTechs.ReactRnd
+        ],
+        githubURL: "https://github.com/Jes015/ScreenCapture",
+        demoURL: "https://screen-capture-nine.vercel.app",
+    },
+    {
         title: "CulinaryAlchemy",
         description: "Social media to share recipes.",
         imageUrls: getImagesPathByName("culinary-alchemy"),
@@ -17,7 +37,9 @@ export const CProjects: IProject[] = [
             CTechs.i18next,
             CTechs.million,
             CTechs.joyUI,
-            CTechs.ReactHookForm
+            CTechs.ReactHookForm,
+            CTechs.CommitLint,
+            CTechs.Husky
         ],
         githubURL: "https://github.com/CulinaryAlchemy/CulinaryAlchemy",
         demoURL: "https://culinary-alchemy-web-app.vercel.app/",
@@ -34,7 +56,8 @@ export const CProjects: IProject[] = [
             CTechs.Typescript,
             CTechs.Zod,
             CTechs.ReactHookForm,
-            CTechs.Sooner
+            CTechs.Sooner,
+            CTechs.Husky
         ],
         githubURL: "https://github.com/Jes015/Spotify-Clone",
         demoURL: "https://spotify-clone-seven-ebon.vercel.app/",
@@ -48,7 +71,8 @@ export const CProjects: IProject[] = [
             CTechs.React,
             CTechs.playwright,
             CTechs.Typescript,
-            CTechs.Driverjs
+            CTechs.Driverjs,
+            CTechs.Husky,
         ],
         githubURL: 'https://github.com/Jes015/Blog',
         demoURL: 'https://blog-one-murex.vercel.app/'

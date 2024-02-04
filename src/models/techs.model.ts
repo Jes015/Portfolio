@@ -1,4 +1,4 @@
-import { IconAstro, IconAxios, IconBell, IconBxlFirebase, IconCodeJson, IconConsoleLine, IconDiamond, IconI18next, IconJS, IconMui, IconNextjs, IconPlaywright, IconReact, IconReacthookform, IconReactrouter, IconSWR, IconShipWheel, IconSupabase, IconTypescript, IconWindow } from "@src/components/Icons"
+import { IconAstro, IconAxios, IconBell, IconBxlFirebase, IconCodeJson, IconCommit, IconCommitlint, IconConsoleLine, IconDiamond, IconI18next, IconJS, IconMui, IconNextjs, IconPlaywright, IconReact, IconReacthookform, IconReactrouter, IconSWR, IconShipWheel, IconSupabase, IconTailwind, IconTypescript, IconWindow } from "@src/components/Icons"
 import type { TIcon } from "@src/models"
 
 export interface ITech {
@@ -96,7 +96,28 @@ const CTechs = {
     Zustand: {
         name: 'Zustand',
         Icon: IconReact
+    },
+    RadixUIPrimitives: {
+        name: 'RadixUI Primitives',
+        Icon: IconReact
+    },
+    ReactRnd: {
+        name: 'React Rnd',
+        Icon: IconWindow
+    },
+    CommitLint: {
+        name: 'Commit Lint',
+        Icon: IconCommitlint
+    },
+    TailwindCss: {
+        name: 'Tailwind CSS',
+        Icon: IconTailwind
+    },
+    Husky: {
+        name: 'Husky',
+        Icon: IconCommit
     }
+
 } as const
 
 export { CTechs }
